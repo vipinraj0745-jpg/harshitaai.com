@@ -1,105 +1,279 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harshita AI - Best AI Tools Directory</title>
+    <title>Harshita AI - Discover the next generation of AI tools</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f7f6;
+            background-color: #0b0f19;
+            color: #ffffff;
             margin: 0;
             padding: 0;
-            color: #333;
         }
         header {
-            background-color: #007bff;
-            color: white;
             text-align: center;
-            padding: 30px 20px;
+            padding: 40px 20px 20px;
         }
         header h1 {
-            margin: 0;
             font-size: 28px;
+            color: #a855f7;
+            margin-bottom: 5px;
         }
         header p {
-            margin: 5px 0 0;
-            font-size: 16px;
-            opacity: 0.9;
+            color: #9ca3af;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+        .search-box {
+            width: 90%;
+            max-width: 600px;
+            margin: 0 auto 20px;
+            display: block;
+            padding: 12px 20px;
+            background-color: #1f2937;
+            border: 1px solid #374151;
+            border-radius: 8px;
+            color: white;
+            font-size: 14px;
+        }
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            padding: 0 20px 30px;
+        }
+        .category-btn {
+            background-color: #1f2937;
+            color: #d1d5db;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+        .category-btn.active, .category-btn:hover {
+            background-color: #7c3aed;
+            color: white;
         }
         .tools-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
-            padding: 30px 20px;
+            padding: 0 20px 40px;
             max-width: 1200px;
             margin: auto;
         }
         .tool-card {
-            background: #ffffff;
-            border: 1px solid #e0e0e0;
-            border-radius: 10px;
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 12px;
             padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease;
         }
         .tool-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+            border-color: #7c3aed;
+        }
+        .badge {
+            font-size: 10px;
+            font-weight: bold;
+            color: #9ca3af;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: block;
         }
         .tool-card h3 {
-            font-size: 20px;
-            color: #007bff;
-            margin-top: 0;
-            margin-bottom: 10px;
+            font-size: 18px;
+            color: #ffffff;
+            margin: 0 0 8px 0;
         }
         .tool-card p {
-            font-size: 14px;
-            color: #666;
+            font-size: 13px;
+            color: #9ca3af;
             line-height: 1.5;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         .tool-btn {
-            display: inline-block;
-            background-color: #007bff;
+            display: block;
+            text-align: center;
+            background-color: #4f46e5;
             color: white;
-            padding: 8px 15px;
-            border-radius: 5px;
+            padding: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .tool-btn:hover {
+            background-color: #4338ca;
+        }
+        /* Footer Styling */
+        footer {
+            background-color: #030712;
+            border-top: 1px solid #1f2937;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        .footer-section h4 {
+            color: #ffffff;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        .footer-section ul li a {
+            color: #9ca3af;
             text-decoration: none;
             font-size: 14px;
         }
-        .tool-btn:hover {
-            background-color: #0056b3;
+        .footer-section ul li a:hover {
+            color: #a855f7;
+        }
+        .footer-bottom {
+            text-align: center;
+            color: #6b7280;
+            font-size: 13px;
+            margin-top: 40px;
+            border-top: 1px solid #1f2937;
+            padding-top: 20px;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Harshita AI Directory</h1>
-        <p>Discover the best and latest AI tools in one place</p>
+        <h1>Harshita AI</h1>
+        <p>Discover the next generation of AI tools.</p>
+        <input type="text" class="search-box" placeholder="AI टूल सर्च करें (जैसे: ChatGPT, Video)">
+        
+        <div class="categories">
+            <button class="category-btn active">All</button>
+            <button class="category-btn">Text / Chat</button>
+            <button class="category-btn">Image / Art</button>
+            <button class="category-btn">Video</button>
+            <button class="category-btn">Audio / Voice</button>
+        </div>
     </header>
 
     <div class="tools-container">
+        <!-- 1 -->
         <div class="tool-card">
+            <span class="badge">TEXT</span>
             <h3>ChatGPT</h3>
             <p>बातचीत करने, कोडिंग करने और अपने सवालों के जवाब पाने के लिए सबसे बेहतरीन एआई चैटबॉट।</p>
             <a href="https://chat.openai.com" target="_blank" class="tool-btn">Visit Tool</a>
         </div>
         
+        <!-- 2 -->
         <div class="tool-card">
+            <span class="badge">IMAGE</span>
             <h3>Midjourney</h3>
-            <p>सिर्फ शब्दों (Prompts) की मदद से बेहद खूबसूरत, हाई-क्वालिटी और असली दिखने वाली तस्वीरें बनाएं।</p>
+            <p>टेक्स्ट प्रॉम्प्ट से canvas की ओर रियलिस्टिक तस्वीरें बनाने वाला एआई टूल।</p>
             <a href="https://www.midjourney.com" target="_blank" class="tool-btn">Visit Tool</a>
         </div>
 
+        <!-- 3 -->
         <div class="tool-card">
+            <span class="badge">AUDIO</span>
+            <h3>ElevenLabs</h3>
+            <p>दुनिया का सबसे एडवांस एआई वॉइस जनरेटर और टेक्स्ट-टू-स्पीच टूल।</p>
+            <a href="https://elevenlabs.io" target="_blank" class="tool-btn">Visit Tool</a>
+        </div>
+
+        <!-- 4 -->
+        <div class="tool-card">
+            <span class="badge">VIDEO</span>
+            <h3>Runway Gen-2</h3>
+            <p>सिर्फ टेक्स्ट या इमेज डालकर शानदार एआई वीडियो जनरेट करें।</p>
+            <a href="https://runwayml.com" target="_blank" class="tool-btn">Visit Tool</a>
+        </div>
+
+        <!-- 5 -->
+        <div class="tool-card">
+            <span class="badge">TEXT</span>
             <h3>Claude AI</h3>
-            <p>लंबी फाइल्स को पढ़ने, समझने और बेहतरीन कंटेंट लिखने के लिए एंथ्रोपिक का शानदार एआई टूल।</p>
+            <p>लंबे आर्टिकल लिखने, कोडिंग करने और एडवांस रिसर्च के लिए बेस्ट एआई टूल।</p>
             <a href="https://claude.ai" target="_blank" class="tool-btn">Visit Tool</a>
         </div>
+
+        <!-- 6 -->
+        <div class="tool-card">
+            <span class="badge">IMAGE</span>
+            <h3>Leonardo AI</h3>
+            <p>गेमिंग और आर्ट एसेट्स बनाने के लिए एक बेहतरीन 3D इमेज जनरेटर।</p>
+            <a href="https://leonardo.ai" target="_blank" class="tool-btn">Visit Tool</a>
+        </div>
+
+        <!-- 7 -->
+        <div class="tool-card">
+            <span class="badge">VIDEO</span>
+            <h3>Sora</h3>
+            <p>OpenAI का सबसे खतरनाक टेक्स्ट-टू-वीडियो एआई टूल।</p>
+            <a href="https://openai.com/sora" target="_blank" class="tool-btn">Visit Tool</a>
+        </div>
+
+        <!-- 8 -->
+        <div class="tool-card">
+            <span class="badge">TEXT</span>
+            <h3>v0 by Vercel</h3>
+            <p>सिर्फ बोलकर पूरी वेबसाइट का फ्रंटएंड कोड तैयार करवाने वाला एआई टूल।</p>
+            <a href="https://v0.dev" target="_blank" class="tool-btn">Visit Tool</a>
+        </div>
     </div>
+
+    <!-- Professional Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Core Products</h4>
+                <ul>
+                    <li><a href="#">AI Skills</a></li>
+                    <li><a href="#">Professional Services</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Legal Drafting</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal & Support</h4>
+                <ul>
+                    <li><a href="#">Release Notes</a></li>
+                    <li><a href="#">Changelog</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Harshita AI. All rights reserved.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
