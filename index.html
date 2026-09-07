@@ -1,230 +1,105 @@
+
 <!DOCTYPE html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harshita AI - Discover the next generation of AI tools</title>
+    <title>Harshita AI - Best AI Tools Directory</title>
     <style>
-        /* CSS Reset and Variables */
-        * {
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
         }
-        :root {
-            --bg-color: #0b0f19;
-            --card-bg: #111827;
-            --text-color: #f3f4f6;
-            --text-muted: #9ca3af;
-            --accent-color: #6366f1;
-            --accent-hover: #4f46e5;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            padding: 20px;
-        }
-
-        /* Header Styles */
         header {
+            background-color: #007bff;
+            color: white;
             text-align: center;
-            margin: 40px 0;
+            padding: 30px 20px;
         }
         header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            background: linear-gradient(to right, #6366f1, #a855f7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            margin: 0;
+            font-size: 28px;
         }
         header p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
+            margin: 5px 0 0;
+            font-size: 16px;
+            opacity: 0.9;
         }
-
-        /* Search and Filter Section */
-        .controls {
-            max-width: 800px;
-            margin: 0 auto 40px auto;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        .search-bar {
-            width: 100%;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #1f2937;
-            background-color: var(--card-bg);
-            color: white;
-            font-size: 1rem;
-            outline: none;
-        }
-        .search-bar:focus {
-            border-color: var(--accent-color);
-        }
-        .filters {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .filter-btn {
-            background-color: var(--card-bg);
-            color: var(--text-color);
-            border: 1px solid #1f2937;
-            padding: 8px 16px;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .filter-btn.active, .filter-btn:hover {
-            background-color: var(--accent-color);
-            border-color: var(--accent-color);
-        }
-
-        /* Tools Grid Section */
-        .tools-grid {
-            max-width: 1200px;
-            margin: 0 auto;
+        .tools-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 30px 20px;
+            max-width: 1200px;
+            margin: auto;
         }
         .tool-card {
-            background-color: var(--card-bg);
-            border: 1px solid #1f2937;
-            border-radius: 12px;
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
             padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         .tool-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
         }
-        .tool-category {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            color: var(--accent-color);
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-        .tool-name {
-            font-size: 1.3rem;
+        .tool-card h3 {
+            font-size: 20px;
+            color: #007bff;
+            margin-top: 0;
             margin-bottom: 10px;
         }
-        .tool-desc {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-            line-height: 1.4;
+        .tool-card p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 15px;
         }
-        .visit-btn {
-            background-color: var(--accent-color);
+        .tool-btn {
+            display: inline-block;
+            background-color: #007bff;
             color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
             text-decoration: none;
-            text-align: center;
-            padding: 10px;
-            border-radius: 6px;
-            font-weight: bold;
-            transition: background 0.2s;
+            font-size: 14px;
         }
-        .visit-btn:hover {
-            background-color: var(--accent-hover);
+        .tool-btn:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Harshita AI</h1>
-        <p>Discover the next generation of AI tools.</p>
+        <h1>Harshita AI Directory</h1>
+        <p>Discover the best and latest AI tools in one place</p>
     </header>
 
-    <div class="controls">
-        <input type="text" id="searchBar" class="search-bar" placeholder="AI टूल सर्च करें (उदा. Chatbot, Video)...">
-        <div class="filters">
-            <button class="filter-btn active" onclick="filterCategory('all')">All</button>
-            <button class="filter-btn" onclick="filterCategory('text')">Text / Chat</button>
-            <button class="filter-btn" onclick="filterCategory('image')">Image / Art</button>
-            <button class="filter-btn" onclick="filterCategory('video')">Video</button>
-            <button class="filter-btn" onclick="filterCategory('audio')">Audio / Voice</button>
+    <div class="tools-container">
+        <div class="tool-card">
+            <h3>ChatGPT</h3>
+            <p>बातचीत करने, कोडिंग करने और अपने सवालों के जवाब पाने के लिए सबसे बेहतरीन एआई चैटबॉट।</p>
+            <a href="https://chat.openai.com" target="_blank" class="tool-btn">Visit Tool</a>
+        </div>
+        
+        <div class="tool-card">
+            <h3>Midjourney</h3>
+            <p>सिर्फ शब्दों (Prompts) की मदद से बेहद खूबसूरत, हाई-क्वालिटी और असली दिखने वाली तस्वीरें बनाएं।</p>
+            <a href="https://www.midjourney.com" target="_blank" class="tool-btn">Visit Tool</a>
+        </div>
+
+        <div class="tool-card">
+            <h3>Claude AI</h3>
+            <p>लंबी फाइल्स को पढ़ने, समझने और बेहतरीन कंटेंट लिखने के लिए एंथ्रोपिक का शानदार एआई टूल।</p>
+            <a href="https://claude.ai" target="_blank" class="tool-btn">Visit Tool</a>
         </div>
     </div>
 
-    <main class="tools-grid" id="toolsGrid">
-        <!-- टूल्स यहाँ जावास्क्रिप्ट से लोड होंगे -->
-    </main>
-
-    <script>
-        // एआई टूल्स का डेटाबेस (Data)
-        const tools = [
-            { name: "ChatGPT", category: "text", desc: "ओपनएआई का सबसे बेहतरीन एआई चैटबॉट जो आपके हर सवाल का जवाब दे सकता है।", link: "https://chatgpt.com" },
-            { name: "Midjourney", category: "image", desc: "टेक्स्ट प्रॉम्प्ट से कमाल की और रियलिस्टिक तस्वीरें बनाने वाला एआई टूल।", link: "https://www.midjourney.com" },
-            { name: "ElevenLabs", category: "audio", desc: "दुनिया का सबसे एडवांस एआई वॉयस जनरेटर और टेक्स्ट-टू-स्पीच टूल।", link: "https://elevenlabs.io" },
-            { name: "Runway Gen-2", category: "video", desc: "सिर्फ टेक्स्ट या इमेज लिखकर शानदार एआई वीडियो जनरेट करें।", link: "https://runwayml.com" },
-            { name: "Claude AI", category: "text", desc: "लंबे आर्टिकल्स लिखने, कोडिंग करने और एडवांस रिसर्च के लिए बेस्ट एआई।", link: "https://claude.ai" },
-            { name: "Leonardo AI", category: "image", desc: "गेमिंग और आर्ट एसेट्स बनाने के लिए एक बेहतरीन फ्री इमेज जनरेटर।", link: "https://leonardo.ai" },
-            { name: "Sora", category: "video", desc: "OpenAI का सबसे खतरनाक टेक्स्ट-टू-वीडियो एआई टूल।", link: "https://openai.com/sora" },
-            { name: "v0 by Vercel", category: "text", desc: "सिर्फ बोलकर पूरी वेबसाइट का फ्रंटएंड कोड तैयार करवाने वाला एआई टूल।", link: "https://v0.dev" }
-        ];
-
-        const toolsGrid = document.getElementById('toolsGrid');
-        const searchBar = document.getElementById('searchBar');
-
-        // टूल्स को स्क्रीन पर दिखाने का फंक्शन
-        function displayTools(toolsList) {
-            toolsGrid.innerHTML = "";
-            if(toolsList.length === 0) {
-                toolsGrid.innerHTML = "<p style='text-align:center; grid-column: 1/-1; color: var(--text-muted);'>कोई टूल नहीं मिला!</p>";
-                return;
-            }
-            toolsList.forEach(tool => {
-                const card = document.createElement('div');
-                card.className = `tool-card`;
-                card.innerHTML = `
-                    <div>
-                        <div class="tool-category">${tool.category}</div>
-                        <div class="tool-name">${tool.name}</div>
-                        <div class="tool-desc">${tool.desc}</div>
-                    </div>
-                    <a href="${tool.link}" target="_blank" class="visit-btn">Visit Tool</a>
-                `;
-                toolsGrid.appendChild(card);
-            });
-        }
-
-        // सर्च बार चालू करने का कोड
-        searchBar.addEventListener('input', (e) => {
-            const searchStr = e.target.value.toLowerCase();
-            const filteredTools = tools.filter(tool => {
-                return tool.name.toLowerCase().includes(searchStr) || tool.desc.toLowerCase().includes(searchStr);
-            });
-            displayTools(filteredTools);
-        });
-
-        // कैटेगरी फ़िल्टर करने का कोड
-        function filterCategory(category) {
-            // बटन एक्टिव स्टाइल बदलना
-            const buttons = document.querySelectorAll('.filter-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-
-            if(category === 'all') {
-                displayTools(tools);
-            } else {
-                const filtered = tools.filter(tool => tool.category === category);
-                displayTools(filtered);
-            }
-        }
-
-        // पहली बार वेबसाइट खुलने पर सारे टूल्स दिखाना
-        displayTools(tools)
-    </script>
 </body>
 </html>
-
