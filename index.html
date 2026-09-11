@@ -25,35 +25,31 @@
     </div>
   </header>
 
-  <!-- Hero & AI Image Generator Section (Matching Reference Screenshots) -->
+  <!-- Hero & AI Image Generator Section -->
   <section id="generator" class="relative overflow-hidden py-16 px-4 bg-gradient-to-b from-white via-slate-50 to-slate-100">
     <div class="max-w-4xl mx-auto text-center relative z-10">
       <span class="text-xs font-bold uppercase tracking-widest bg-blue-50 text-blue-600 px-3 py-1 rounded-full border border-blue-200">The #1 Best AI Platform</span>
       <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 mt-4 tracking-tight">Creating the perfect AI image is easy with Harshita AI</h1>
       <p class="text-slate-600 text-base sm:text-lg mt-3 max-w-2xl mx-auto">Transform your imagination into an image in just a few steps. Describe what you want, let AI create it, then choose your favourite result.</p>
       
-      <!-- Visual Overlapping Photos Collage (Jaise photo me hai) -->
+      <!-- Visual Overlapping Photos Collage -->
       <div class="mt-10 relative max-w-lg mx-auto h-64 sm:h-80 flex items-center justify-center">
-        <!-- Background Grid Effect -->
         <div class="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:16px_16px] opacity-60 rounded-3xl"></div>
 
-        <!-- Overlapping Image 1 (Leaf/Nature) -->
         <div class="absolute -left-2 sm:left-4 top-4 w-36 sm:w-48 h-28 sm:h-36 bg-white p-2 rounded-2xl shadow-xl transform -rotate-6 border border-slate-200 z-10">
           <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=400&q=80" alt="Nature" class="w-full h-full object-cover rounded-xl">
         </div>
 
-        <!-- Overlapping Image 2 (Red Flower) -->
         <div class="absolute left-1/2 transform -translate-x-1/2 bottom-2 w-40 sm:w-52 h-32 sm:h-40 bg-white p-2 rounded-2xl shadow-2xl rotate-3 border border-slate-200 z-20">
           <img src="https://images.unsplash.com/photo-1546842931-886c185b4c8c?auto=format&fit=crop&w=400&q=80" alt="Red Flower" class="w-full h-full object-cover rounded-xl">
         </div>
 
-        <!-- Overlapping Image 3 (House Illustration) -->
         <div class="absolute -right-2 sm:right-4 top-6 w-36 sm:w-48 h-28 sm:h-36 bg-white p-2 rounded-2xl shadow-xl transform rotate-6 border border-slate-200 z-10">
           <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=400&q=80" alt="Landscape" class="w-full h-full object-cover rounded-xl">
         </div>
       </div>
 
-      <!-- Search Prompt Pill Example (Jaise photo me hai) -->
+      <!-- Search Prompt Pill Example -->
       <div class="mt-8 inline-flex items-center space-x-2 bg-white border border-slate-300 px-4 py-2.5 rounded-full shadow-sm text-slate-700 text-sm font-medium">
         <span>🔍</span>
         <span>Images depicting nature and beauty</span>
@@ -77,14 +73,22 @@
       <!-- Result Display Container -->
       <div id="resultContainer" class="mt-8 max-w-2xl mx-auto hidden text-center bg-white p-6 rounded-3xl border border-slate-200 shadow-xl">
         <h3 class="text-slate-900 font-bold text-lg mb-3">✨ Aapki Generated Image:</h3>
-        <div id="loadingText" class="text-blue-600 text-sm font-medium animate-pulse mb-3 hidden">AI image bana raha hai, thoda wait karein...</div>
-        <img id="generatedImage" src="" alt="AI Generated Art" class="rounded-2xl mx-auto border border-slate-200 shadow-md max-h-[450px] object-contain w-full transition-opacity duration-300">
+        <div id="loadingText" class="text-blue-600 text-sm font-medium animate-pulse mb-3">AI image bana raha hai, thoda wait karein...</div>
+        
+        <!-- Image with Click to open feature -->
+        <div class="relative group inline-block w-full">
+          <img id="generatedImage" src="" alt="AI Generated Art" class="rounded-2xl mx-auto border border-slate-200 shadow-md max-h-[450px] object-contain w-full transition-opacity duration-300 opacity-30 cursor-pointer hover:opacity-90">
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition pointer-events-none bg-black/20 rounded-2xl">
+            <span class="bg-white/90 text-slate-900 text-xs font-semibold px-3 py-1.5 rounded-full shadow">🔍 Click to view full size</span>
+          </div>
+        </div>
+        <p class="text-xs text-slate-400 mt-2">💡 Image par click karke full size mein dekh sakte hain</p>
       </div>
     </div>
   </section>
 
   <!-- More than an AI image maker Section -->
-  <section class="py-16 px-4 max-w-7xl mx-auto border-t border-slate-200">
+  <section id="features" class="py-16 px-4 max-w-7xl mx-auto border-t border-slate-200">
     <div class="text-center mb-12">
       <h2 class="text-3xl font-bold text-slate-900">More than an AI image maker</h2>
       <p class="text-slate-600 text-sm mt-2">Take your creative workflow to the next level with advanced features.</p>
@@ -109,7 +113,7 @@
     </div>
   </section>
 
-  <!-- How It Works Section (Jaise second photo me hai) -->
+  <!-- How It Works Section -->
   <section id="howitworks" class="py-16 px-4 max-w-7xl mx-auto border-t border-slate-200 bg-slate-50/50 rounded-3xl my-8">
     <div class="text-center mb-12">
       <h2 class="text-3xl font-bold text-slate-900">How do I create an AI image with Harshita AI?</h2>
@@ -145,7 +149,7 @@
     <p>© 2026 Harshita AI. All rights reserved.</p>
   </footer>
 
-  <!-- JavaScript for Live AI Generation -->
+  <!-- JavaScript for Live AI Generation & Click to Open -->
   <script>
     const generateBtn = document.getElementById('generateBtn');
     const inputField = document.getElementById('promptInput');
@@ -153,7 +157,9 @@
     const generatedImage = document.getElementById('generatedImage');
     const loadingText = document.getElementById('loadingText');
 
-    generateBtn.addEventListener('click', async () => {
+    let currentImageUrl = '';
+
+    generateBtn.addEventListener('click', () => {
       const promptText = inputField.value.trim();
       if (!promptText) {
         alert('Pehle kuch description toh likhiye!');
@@ -164,20 +170,30 @@
       resultContainer.classList.remove('hidden');
       loadingText.classList.remove('hidden');
       generatedImage.style.opacity = '0.3';
+      generatedImage.src = '';
 
-      // Pollinations AI free endpoint
-      const imageUrl = `https://pollinations.ai/prompt/${encodeURIComponent(promptText)}`;
+      // Correct Pollinations AI free image endpoint
+      currentImageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(promptText)}`;
       
       const img = new Image();
-      img.src = imageUrl;
+      img.src = currentImageUrl;
       img.onload = () => {
-        generatedImage.src = imageUrl;
+        generatedImage.src = currentImageUrl;
         loadingText.classList.add('hidden');
         generatedImage.style.opacity = '1';
       };
+      img.onerror = () => {
+        loadingText.innerText = 'Image load hone mein thodi problem aayi, dubara try karein.';
+      };
+    });
+
+    // Open image in full size when clicked
+    generatedImage.addEventListener('click', () => {
+      if (currentImageUrl) {
+        window.open(currentImageUrl, '_blank');
+      }
     });
   </script>
 
 </body>
 </html>
-
