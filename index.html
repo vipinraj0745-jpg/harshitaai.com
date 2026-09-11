@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Image Generator - Harshita AI</title>
+  <title>Harshita AI - Next Generation AI Tools & Image Generator</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -28,45 +28,98 @@
         <span class="text-xl font-extrabold bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">Harshita AI</span>
       </div>
       <nav class="hidden md:flex space-x-6 text-sm text-slate-400">
-        <a href="#" class="hover:text-white transition">Tools</a>
-        <a href="#" class="hover:text-white transition">Image Generator</a>
-        <a href="#" class="hover:text-white transition">Pricing</a>
-        <a href="#" class="hover:text-white transition">About</a>
+        <a href="#tools" class="hover:text-white transition">AI Tools</a>
+        <a href="#generator" class="hover:text-white transition">Image Generator</a>
+        <a href="#features" class="hover:text-white transition">Features</a>
+        <a href="#faq" class="hover:text-white transition">FAQ</a>
       </nav>
       <div>
-        <a href="#" class="px-4 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-sm font-medium rounded-xl transition shadow-lg shadow-purple-900/20">Login</a>
+        <a href="#generator" class="px-4 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-sm font-medium rounded-xl transition shadow-lg shadow-purple-900/20">Get Started</a>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="relative overflow-hidden py-20 px-4 text-center">
+  <!-- Hero & Live AI Image Generator Section -->
+  <section id="generator" class="relative overflow-hidden py-20 px-4 text-center">
     <div class="absolute inset-0 bg-gradient-to-b from-purple-900/10 via-transparent to-transparent pointer-events-none"></div>
     <div class="max-w-3xl mx-auto relative z-10">
-      <span class="text-xs font-bold uppercase tracking-widest bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full border border-purple-500/20">The #1 Best AI Image Generator</span>
+      <span class="text-xs font-bold uppercase tracking-widest bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full border border-purple-500/20">The #1 Best AI Platform</span>
       <h1 class="text-4xl sm:text-5xl font-extrabold text-white mt-4 tracking-tight">AI Image Generator</h1>
       <p class="text-slate-400 text-base sm:text-lg mt-3">Generate an image in seconds with the power of AI</p>
       
       <!-- Interactive Input Prompt Box -->
       <div class="mt-8 bg-[#121826] border border-slate-800 rounded-2xl p-3 shadow-2xl max-w-2xl mx-auto flex flex-col sm:flex-row items-center gap-3">
-        <input type="text" placeholder="Describe the image you want to generate..." class="w-full bg-transparent text-white placeholder-slate-500 text-sm px-4 py-3 focus:outline-none">
-        <button class="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-medium rounded-xl transition shadow-lg shadow-purple-900/30 flex items-center justify-center space-x-2">
+        <input type="text" id="promptInput" placeholder="Describe the image you want to generate..." class="w-full bg-transparent text-white placeholder-slate-500 text-sm px-4 py-3 focus:outline-none">
+        <button id="generateBtn" class="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-medium rounded-xl transition shadow-lg shadow-purple-900/30 flex items-center justify-center space-x-2 shrink-0">
           <span>Generate</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </button>
+      </div>
+
+      <!-- Result Display Container -->
+      <div id="resultContainer" class="mt-8 max-w-2xl mx-auto hidden text-center">
+        <h3 class="text-white font-bold text-lg mb-3">✨ Aapki Generated Image:</h3>
+        <div id="loadingText" class="text-purple-400 text-sm animate-pulse mb-3 hidden">AI image bana raha hai, thoda wait karein...</div>
+        <img id="generatedImage" src="" alt="AI Generated Art" class="rounded-2xl mx-auto border border-purple-500/50 shadow-2xl max-h-[450px] object-contain w-full transition-opacity duration-300">
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Tools Directory Section -->
+  <section id="tools" class="py-16 px-4 max-w-7xl mx-auto border-t border-slate-800">
+    <div class="text-center mb-12">
+      <span class="text-xs font-bold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full">Explore Directory</span>
+      <h2 class="text-3xl font-bold text-white mt-3">Discover Top AI Tools</h2>
+      <p class="text-slate-400 text-sm mt-2">Handpicked powerful AI tools to boost your daily productivity.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- ChatGPT -->
+      <div class="bg-[#121826] border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/50 hover:shadow-xl transition-all duration-300 group">
+        <div>
+          <span class="text-[10px] font-bold tracking-widest uppercase bg-purple-500/10 text-purple-400 px-2.5 py-1 rounded-md">Text / Chat</span>
+          <h3 class="text-xl font-bold text-white mt-3 group-hover:text-purple-400 transition">ChatGPT</h3>
+          <p class="text-slate-400 text-sm mt-2 leading-relaxed">राइटींग, कोडिंग और ब्रेनस्टॉर्मिंग के लिए दुनिया का सबसे लोकप्रिय AI टूल।</p>
+        </div>
+        <div class="mt-6">
+          <a href="https://chatgpt.com" target="_blank" class="block w-full py-2.5 px-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-center font-medium rounded-xl transition shadow-lg">Visit Tool</a>
+        </div>
+      </div>
+
+      <!-- Midjourney -->
+      <div class="bg-[#121826] border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/50 hover:shadow-xl transition-all duration-300 group">
+        <div>
+          <span class="text-[10px] font-bold tracking-widest uppercase bg-pink-500/10 text-pink-400 px-2.5 py-1 rounded-md">Image / Art</span>
+          <h3 class="text-xl font-bold text-white mt-3 group-hover:text-purple-400 transition">Midjourney</h3>
+          <p class="text-slate-400 text-sm mt-2 leading-relaxed">सिनेमैटिक और बेहद हाई-क्वालिटी रियलिस्टिक इमेज जनरेट करने वाला लीडर।</p>
+        </div>
+        <div class="mt-6">
+          <a href="https://www.midjourney.com" target="_blank" class="block w-full py-2.5 px-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-center font-medium rounded-xl transition shadow-lg">Visit Tool</a>
+        </div>
+      </div>
+
+      <!-- Perplexity AI -->
+      <div class="bg-[#121826] border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/50 hover:shadow-xl transition-all duration-300 group">
+        <div>
+          <span class="text-[10px] font-bold tracking-widest uppercase bg-emerald-500/10 text-emerald-400 px-2.5 py-1 rounded-md">Search</span>
+          <h3 class="text-xl font-bold text-white mt-3 group-hover:text-purple-400 transition">Perplexity AI</h3>
+          <p class="text-slate-400 text-sm mt-2 leading-relaxed">इंटरनेट पर रियल-टाइम रिसर्च और सटीक सोर्सेज के साथ आंसर्स देने वाला सर्च इंजन।</p>
+        </div>
+        <div class="mt-6">
+          <a href="https://www.perplexity.ai" target="_blank" class="block w-full py-2.5 px-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-center font-medium rounded-xl transition shadow-lg">Visit Tool</a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Why Harshita AI is the World's Best AI Image Generator (14 Features Grid) -->
-  <section class="py-16 px-4 max-w-7xl mx-auto">
+  <section id="features" class="py-16 px-4 max-w-7xl mx-auto border-t border-slate-800">
     <div class="text-center mb-12">
       <h2 class="text-3xl font-bold text-white">Why Harshita AI is the world's best AI image generator</h2>
       <p class="text-slate-400 text-sm mt-2">Discover what makes our AI engine superior for all your creative needs.</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      
       <!-- Feature 1 -->
       <div class="bg-[#121826] border border-slate-800/80 rounded-2xl p-6 flex items-start space-x-4 hover:border-purple-500/40 transition">
         <div class="p-3 bg-purple-500/10 text-purple-400 rounded-xl shrink-0">✨</div>
@@ -192,7 +245,6 @@
           <p class="text-slate-400 text-sm mt-1 leading-relaxed">Use your images to create eye-catching content for Instagram, Facebook, TikTok, LinkedIn, YouTube and more.</p>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -226,7 +278,7 @@
   </section>
 
   <!-- FAQ Section -->
-  <section class="py-16 px-4 max-w-4xl mx-auto">
+  <section id="faq" class="py-16 px-4 max-w-4xl mx-auto">
     <div class="text-center mb-10">
       <h2 class="text-3xl font-bold text-white">AI Image Generator FAQ</h2>
       <p class="text-slate-400 text-sm mt-2">Got questions? We've got answers.</p>
@@ -253,5 +305,20 @@
     <p>© 2026 Harshita AI. All rights reserved.</p>
   </footer>
 
-</body>
-</html>
+  <!-- Live Generation JavaScript Script -->
+  <script>
+    const generateBtn = document.getElementById('generateBtn');
+    const inputField = document.getElementById('promptInput');
+    const resultContainer = document.getElementById('resultContainer');
+    const generatedImage = document.getElementById('generatedImage');
+    const loadingText = document.getElementById('loadingText');
+
+    generateBtn.addEventListener('click', async () => {
+      const promptText = inputField.value.trim();
+      if (!promptText) {
+        alert('Pehle kuch description toh likhiye!');
+        return;
+      }
+
+      // UI update
+      resultContainer.classLis
