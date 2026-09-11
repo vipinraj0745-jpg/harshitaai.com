@@ -62,7 +62,6 @@
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      
       <!-- Template 1 -->
       <div onclick="openTemplatePreview('Artisanal Breads & Pastries', 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80')" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:border-blue-500/50 transition cursor-pointer shadow-lg">
         <div class="h-48 overflow-hidden relative">
@@ -98,7 +97,6 @@
           <p class="text-slate-400 text-xs mt-1">Showcase your graphics, photography and projects easily.</p>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -133,7 +131,7 @@
     </div>
   </section>
 
-  <!-- TOP 45 AI TOOLS DIRECTORY SECTION -->
+  <!-- TOP 45 AI TOOLS DIRECTORY SECTION (HARDCODED & GUARANTEED TO DISPLAY) -->
   <section id="aitools" class="py-16 px-4 max-w-7xl mx-auto border-t border-slate-900">
     <div class="text-center mb-10">
       <span class="text-xs font-bold uppercase tracking-widest bg-purple-500/10 text-purple-400 px-3.5 py-1.5 rounded-full border border-purple-500/20">Comprehensive Hub</span>
@@ -157,150 +155,70 @@
       </div>
     </div>
 
-    <!-- 45 Tools Grid -->
+    <!-- 45 Tools Grid (Hardcoded Direct Elements) -->
     <div id="toolsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Injected dynamically via JS -->
-    </div>
-  </section>
 
-  <!-- Features Section (Custom Domain Underline, Hosting, etc.) -->
-  <section id="features" class="py-16 px-4 max-w-7xl mx-auto border-t border-slate-900">
-    <div class="text-center mb-12">
-      <h2 class="text-2xl sm:text-3xl font-bold text-white">Why creators love Harshita AI</h2>
-      <p class="text-slate-400 text-sm mt-2">Packed with advanced builder features for maximum performance.</p>
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="bg-slate-900/60 border border-slate-800/80 p-6 rounded-2xl">
-        <div class="text-2xl mb-3">⚡</div>
-        <h3 class="font-bold text-white">Lightning Fast Generation</h3>
-        <p class="text-slate-400 text-xs sm:text-sm mt-2">Generate fully functioning, responsive websites and assets with the world's fastest AI engine.</p>
-      </div>
-      <div class="bg-slate-900/60 border border-slate-800/80 p-6 rounded-2xl">
-        <div class="text-2xl mb-3">🔗</div>
-        <h3 class="font-bold text-white">Connect Your Own Domain</h3>
-        <p class="text-slate-400 text-xs sm:text-sm mt-2">Easily link a <span class="text-blue-400 underline cursor-pointer">custom domain</span> you already own, or publish instantly with a free branded URL.</p>
-      </div>
-      <div class="bg-slate-900/60 border border-slate-800/80 p-6 rounded-2xl">
-        <div class="text-2xl mb-3">🛡️</div>
-        <h3 class="font-bold text-white">AI-Powered Hosting Included</h3>
-        <p class="text-slate-400 text-xs sm:text-sm mt-2">Your website comes ready to run with secure cloud infrastructure — no extra providers or setup needed.</p>
-      </div>
-      <div class="bg-slate-900/60 border border-slate-800/80 p-6 rounded-2xl">
-        <div class="text-2xl mb-3">🎨</div>
-        <h3 class="font-bold text-white">AI Logo & Branding</h3>
-        <p class="text-slate-400 text-xs sm:text-sm mt-2">Generate a <span class="text-blue-400 underline cursor-pointer">professional logo</span> and matching business cards in seconds using built-in AI design tools.</p>
-      </div>
-      <div class="bg-slate-900/60 border border-slate-800/80 p-6 rounded-2xl">
-        <div class="text-2xl mb-3">📱</div>
-        <h3 class="text-lg font-bold text-white">Social & Marketing Kit</h3>
-        <p class="text-slate-400 text-xs sm:text-sm mt-2">Scroll-stopping graphics made easy for Instagram, TikTok, and YouTube with 30+ built-in templates.</p>
-      </div>
-      <div class="bg-slate-900/60 border border-slate-800/80 p-6 rounded-2xl">
-        <div class="text-2xl mb-3">✏️</div>
-        <h3 class="font-bold text-white">Drag & Drop Editor</h3>
-        <p class="text-slate-400 text-xs sm:text-sm mt-2">Fine-tune fonts, color palettes, spacing, and design layouts directly through the browser.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Interactive Template Preview Modal -->
-  <div id="templateModal" class="fixed inset-0 bg-black/80 backdrop-blur-md hidden items-center justify-center z-50 p-4">
-    <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-xl w-full p-6 relative shadow-2xl">
-      <button onclick="closeTemplateModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl font-bold">✕</button>
-      <h3 id="modalTemplateTitle" class="text-xl font-bold text-white mb-2">Template Preview</h3>
-      <p class="text-slate-400 text-xs mb-4">Customize your AI template with instant font styles and layout controls.</p>
-      
-      <div class="rounded-xl overflow-hidden mb-4 border border-slate-800 h-56">
-        <img id="modalTemplateImg" src="" alt="Preview" class="w-full h-full object-cover">
-      </div>
-
-      <div class="flex items-center justify-between bg-slate-950 p-3 rounded-xl border border-slate-800 mb-4">
-        <span class="text-xs text-slate-300 font-medium">Typography Styles:</span>
-        <div class="flex space-x-2">
-          <span class="w-8 h-8 rounded-lg bg-slate-800 text-white flex items-center justify-center font-serif text-xs border border-slate-700 cursor-pointer">Aa</span>
-          <span class="w-8 h-8 rounded-lg bg-slate-800 text-white flex items-center justify-center font-sans text-xs border border-slate-700 cursor-pointer">Aa</span>
-          <span class="w-8 h-8 rounded-lg bg-slate-800 text-white flex items-center justify-center font-mono text-xs border border-slate-700 cursor-pointer">Aa</span>
+      <!-- 1. ChatGPT -->
+      <div class="tool-card bg-slate-900 border border-slate-800 rounded-2xl p-5 hover:border-blue-500/50 transition flex flex-col justify-between shadow-lg group" data-category="Text & Chat" data-name="chatgpt">
+        <div>
+          <div class="flex items-center justify-between mb-3"><span class="text-3xl bg-slate-800/80 p-2.5 rounded-xl border border-slate-700/50">🤖</span><span class="text-[10px] uppercase font-bold tracking-wider bg-blue-500/10 text-blue-400 px-2.5 py-1 rounded-full border border-blue-500/20">Text & Chat</span></div>
+          <h3 class="font-bold text-white text-base group-hover:text-blue-400 transition">ChatGPT</h3>
+          <p class="text-slate-400 text-xs mt-2 leading-relaxed">OpenAI's powerful conversational chatbot for writing, reasoning, and coding.</p>
         </div>
+        <div class="mt-6 pt-4 border-t border-slate-800/60 flex items-center justify-between"><span class="text-xs text-slate-500">Official Tool</span><a href="https://chatgpt.com" target="_blank" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold rounded-xl transition shadow-md flex items-center space-x-1"><span>Launch</span><span>→</span></a></div>
       </div>
 
-      <button onclick="alert('Template successfully initialized! Redirecting to live builder...')" class="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm rounded-xl transition shadow-md">Customize & Publish Website</button>
-    </div>
-  </div>
+      <!-- 2. Google Gemini -->
+      <div class="tool-card bg-slate-900 border border-slate-800 rounded-2xl p-5 hover:border-blue-500/50 transition flex flex-col justify-between shadow-lg group" data-category="Text & Chat" data-name="google gemini">
+        <div>
+          <div class="flex items-center justify-between mb-3"><span class="text-3xl bg-slate-800/80 p-2.5 rounded-xl border border-slate-700/50">✨</span><span class="text-[10px] uppercase font-bold tracking-wider bg-blue-500/10 text-blue-400 px-2.5 py-1 rounded-full border border-blue-500/20">Text & Chat</span></div>
+          <h3 class="font-bold text-white text-base group-hover:text-blue-400 transition">Google Gemini</h3>
+          <p class="text-slate-400 text-xs mt-2 leading-relaxed">Google's advanced multimodal AI assistant integrated with workspace.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-800/60 flex items-center justify-between"><span class="text-xs text-slate-500">Official Tool</span><a href="https://gemini.google.com" target="_blank" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold rounded-xl transition shadow-md flex items-center space-x-1"><span>Launch</span><span>→</span></a></div>
+      </div>
 
-  <!-- Footer -->
-  <footer class="border-t border-slate-900 py-8 px-4 text-center text-slate-500 text-xs">
-    <p>© 2026 Harshita AI. All rights reserved.</p>
-  </footer>
+      <!-- 3. Perplexity AI -->
+      <div class="tool-card bg-slate-900 border border-slate-800 rounded-2xl p-5 hover:border-blue-500/50 transition flex flex-col justify-between shadow-lg group" data-category="Text & Chat" data-name="perplexity ai">
+        <div>
+          <div class="flex items-center justify-between mb-3"><span class="text-3xl bg-slate-800/80 p-2.5 rounded-xl border border-slate-700/50">🔮</span><span class="text-[10px] uppercase font-bold tracking-wider bg-blue-500/10 text-blue-400 px-2.5 py-1 rounded-full border border-blue-500/20">Text & Chat</span></div>
+          <h3 class="font-bold text-white text-base group-hover:text-blue-400 transition">Perplexity AI</h3>
+          <p class="text-slate-400 text-xs mt-2 leading-relaxed">Conversational AI search engine with real-time web citations.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-800/60 flex items-center justify-between"><span class="text-xs text-slate-500">Official Tool</span><a href="https://www.perplexity.ai" target="_blank" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold rounded-xl transition shadow-md flex items-center space-x-1"><span>Launch</span><span>→</span></a></div>
+      </div>
 
-  <!-- JavaScript functionality -->
-  <script>
-    // Search Trigger for Hero Bar
-    function triggerSearch() {
-      const q = document.getElementById('mainSearchInput').value.trim();
-      document.getElementById('generator').scrollIntoView({ behavior: 'smooth' });
-      if (q) {
-        document.getElementById('promptInput').value = q;
-      }
-    }
+      <!-- 4. Anthropic Claude -->
+      <div class="tool-card bg-slate-900 border border-slate-800 rounded-2xl p-5 hover:border-blue-500/50 transition flex flex-col justify-between shadow-lg group" data-category="Text & Chat" data-name="anthropic claude">
+        <div>
+          <div class="flex items-center justify-between mb-3"><span class="text-3xl bg-slate-800/80 p-2.5 rounded-xl border border-slate-700/50">🧠</span><span class="text-[10px] uppercase font-bold tracking-wider bg-blue-500/10 text-blue-400 px-2.5 py-1 rounded-full border border-blue-500/20">Text & Chat</span></div>
+          <h3 class="font-bold text-white text-base group-hover:text-blue-400 transition">Anthropic Claude</h3>
+          <p class="text-slate-400 text-xs mt-2 leading-relaxed">Advanced AI assistant known for deep text analysis and long context.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-800/60 flex items-center justify-between"><span class="text-xs text-slate-500">Official Tool</span><a href="https://claude.ai" target="_blank" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold rounded-xl transition shadow-md flex items-center space-x-1"><span>Launch</span><span>→</span></a></div>
+      </div>
 
-    // AI Image Generator
-    const generateBtn = document.getElementById('generateBtn');
-    const inputField = document.getElementById('promptInput');
-    const resultContainer = document.getElementById('resultContainer');
-    const generatedImage = document.getElementById('generatedImage');
-    const loadingText = document.getElementById('loadingText');
+      <!-- 5. Microsoft Copilot -->
+      <div class="tool-card bg-slate-900 border border-slate-800 rounded-2xl p-5 hover:border-blue-500/50 transition flex flex-col justify-between shadow-lg group" data-category="Text & Chat" data-name="microsoft copilot">
+        <div>
+          <div class="flex items-center justify-between mb-3"><span class="text-3xl bg-slate-800/80 p-2.5 rounded-xl border border-slate-700/50">🌐</span><span class="text-[10px] uppercase font-bold tracking-wider bg-blue-500/10 text-blue-400 px-2.5 py-1 rounded-full border border-blue-500/20">Text & Chat</span></div>
+          <h3 class="font-bold text-white text-base group-hover:text-blue-400 transition">Microsoft Copilot</h3>
+          <p class="text-slate-400 text-xs mt-2 leading-relaxed">AI-powered productivity companion built into Windows and web.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-800/60 flex items-center justify-between"><span class="text-xs text-slate-500">Official Tool</span><a href="https://copilot.microsoft.com" target="_blank" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold rounded-xl transition shadow-md flex items-center space-x-1"><span>Launch</span><span>→</span></a></div>
+      </div>
 
-    let currentImageUrl = '';
+      <!-- 6. xAI Grok -->
+      <div class="tool-card bg-slate-900 border border-slate-800 rounded-2xl p-5 hover:border-blue-500/50 transition flex flex-col justify-between shadow-lg group" data-category="Text & Chat" data-name="xai grok">
+        <div>
+          <div class="flex items-center justify-between mb-3"><span class="text-3xl bg-slate-800/80 p-2.5 rounded-xl border border-slate-700/50">⚡</span><span class="text-[10px] uppercase font-bold tracking-wider bg-blue-500/10 text-blue-400 px-2.5 py-1 rounded-full border border-blue-500/20">Text & Chat</span></div>
+          <h3 class="font-bold text-white text-base group-hover:text-blue-400 transition">xAI Grok</h3>
+          <p class="text-slate-400 text-xs mt-2 leading-relaxed">Real-time witty AI chatbot integrated with X (Twitter).</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-800/60 flex items-center justify-between"><span class="text-xs text-slate-500">Official Tool</span><a href="https://grok.x.ai" target="_blank" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold rounded-xl transition shadow-md flex items-center space-x-1"><span>Launch</span><span>→</span></a></div>
+      </div>
 
-    generateBtn.addEventListener('click', () => {
-      let promptText = inputField.value.trim();
-      if (!promptText) {
-        promptText = "A stunning futuristic magical landscape digital art";
-        inputField.value = promptText;
-      }
-
-      resultContainer.classList.remove('hidden');
-      loadingText.classList.remove('hidden');
-      loadingText.innerText = 'AI image bana raha hai, thoda wait karein...';
-      generatedImage.style.opacity = '0.3';
-
-      currentImageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(promptText)}?model=flux&nologo=true`;
-      generatedImage.src = currentImageUrl;
-      
-      generatedImage.onload = () => {
-        loadingText.classList.add('hidden');
-        generatedImage.style.opacity = '1';
-      };
-      
-      generatedImage.onerror = () => {
-        loadingText.innerText = 'Image load hone mein problem aayi, dubara try karein.';
-      };
-    });
-
-    generatedImage.addEventListener('click', () => {
-      if (currentImageUrl) window.open(currentImageUrl, '_blank');
-    });
-
-    // Template Modal
-    const templateModal = document.getElementById('templateModal');
-    const modalTemplateTitle = document.getElementById('modalTemplateTitle');
-    const modalTemplateImg = document.getElementById('modalTemplateImg');
-
-    function openTemplatePreview(title, imgUrl) {
-      modalTemplateTitle.innerText = title;
-      modalTemplateImg.src = imgUrl;
-      templateModal.classList.remove('hidden');
-      templateModal.classList.add('flex');
-    }
-
-    function closeTemplateModal() {
-      templateModal.classList.add('hidden');
-      templateModal.classList.remove('flex');
-    }
-
-    // 45 AI Tools Data Array
-    const aiToolsList = [
-      { name: "ChatGPT", category: "Text & Chat", desc: "OpenAI's powerful conversational chatbot for writing, reasoning, and coding.", url: "https://chatgpt.com", icon: "🤖" },
-      { name: "Google Gemini", category: "Text & Chat", desc: "Google's advanced multimodal AI assistant integrated with workspace.", url: "https://gemini.google.com", icon: "✨" },
-      { name: "Perplexity AI", category: "Text & Chat", desc: "Conversational AI search engine with real-time web citations.", url: "https:
+      <!-- 7. Poe by Quora -->
+      <div class="tool-card bg-slate-900 border border-slate-800 rounded-2xl p-5 hover:border-blue-500/50 transition flex flex-col justify-between shadow-lg group" data-category="Text & Chat" data-name="poe by quora">
+        <div>
+          <div class="flex items-center justify-between mb-3"><span class="text-3xl bg-slate-800/80 p-2.5 rounded-xl bord
