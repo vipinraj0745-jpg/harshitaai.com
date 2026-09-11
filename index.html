@@ -1,525 +1,257 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en" class="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harshita AI - Discover the next generation of AI tools</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #0b0f19;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Image Generator - Harshita AI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            darkbg: '#0B0F19',
+            cardbg: '#121826',
+          }
         }
-        header {
-            text-align: center;
-            padding: 40px 20px 20px;
-        }
-        header h1 {
-            font-size: 28px;
-            color: #a855f7;
-            margin-bottom: 5px;
-        }
-        header p {
-            color: #9ca3af;
-            font-size: 14px;
-            margin-bottom: 25px;
-        }
-        .search-box {
-            width: 90%;
-            max-width: 600px;
-            margin: 0 auto 20px;
-            display: block;
-            padding: 12px 20px;
-            background-color: #1f2937;
-            border: 1px solid #374151;
-            border-radius: 8px;
-            color: white;
-            font-size: 14px;
-        }
-        .categories {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            padding: 0 20px 30px;
-        }
-        .category-btn {
-            background-color: #1f2937;
-            color: #d1d5db;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 13px;
-            cursor: pointer;
-        }
-        .category-btn.active, .category-btn:hover {
-            background-color: #7c3aed;
-            color: white;
-        }
-        .tools-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            padding: 0 20px 40px;
-            max-width: 1200px;
-            margin: auto;
-        }
-        .tool-card {
-            background: #111827;
-            border: 1px solid #1f2937;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: transform 0.2s ease;
-        }
-        .tool-card:hover {
-            transform: translateY(-4px);
-            border-color: #7c3aed;
-        }
-        .badge {
-            font-size: 10px;
-            font-weight: bold;
-            color: #9ca3af;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-            display: block;
-        }
-        .tool-card h3 {
-            font-size: 18px;
-            color: #ffffff;
-            margin: 0 0 8px 0;
-        }
-        .tool-card p {
-            font-size: 13px;
-            color: #9ca3af;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-        .tool-btn {
-            display: block;
-            text-align: center;
-            background-color: #4f46e5;
-            color: white;
-            padding: 10px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-        }
-        .tool-btn:hover {
-            background-color: #4338ca;
-        }
-        /* Footer Styling */
-        footer {
-            background-color: #030712;
-            border-top: 1px solid #1f2937;
-            padding: 40px 20px;
-            margin-top: 40px;
-        }
-        .footer-content {
-            max-width: 1200px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-        }
-        .footer-section h4 {
-            color: #ffffff;
-            font-size: 16px;
-            margin-bottom: 15px;
-        }
-        .footer-section ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .footer-section ul li {
-            margin-bottom: 10px;
-        }
-        .footer-section ul li a {
-            color: #9ca3af;
-            text-decoration: none;
-            font-size: 14px;
-        }
-        .footer-section ul li a:hover {
-            color: #a855f7;
-        }
-        .footer-bottom {
-            text-align: center;
-            color: #6b7280;
-            font-size: 13px;
-            margin-top: 40px;
-            border-top: 1px solid #1f2937;
-            padding-top: 20px;
-        }
-    </style>
+      }
+    }
+  </script>
 </head>
-<body>
+<body class="bg-darkbg text-slate-100 font-sans antialiased selection:bg-purple-500 selection:text-white">
 
-    <header>
-        <h1>Harshita AI</h1>
-        <p>Discover the next generation of AI tools.</p>
-        <input type="text" class="search-box" placeholder="AI टूल सर्च करें (जैसे: ChatGPT, Video)">
-        
-        <div class="categories">
-            <button class="category-btn active">All</button>
-            <button class="category-btn">Text / Chat</button>
-            <button class="category-btn">Image / Art</button>
-            <button class="category-btn">Video</button>
-            <button class="category-btn">Audio / Voice</button>
+  <!-- Navbar / Header -->
+  <header class="border-b border-slate-800/80 sticky top-0 z-50 bg-[#0B0F19]/90 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <span class="text-xl font-extrabold bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">Harshita AI</span>
+      </div>
+      <nav class="hidden md:flex space-x-6 text-sm text-slate-400">
+        <a href="#" class="hover:text-white transition">Tools</a>
+        <a href="#" class="hover:text-white transition">Image Generator</a>
+        <a href="#" class="hover:text-white transition">Pricing</a>
+        <a href="#" class="hover:text-white transition">About</a>
+      </nav>
+      <div>
+        <a href="#" class="px-4 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-sm font-medium rounded-xl transition shadow-lg shadow-purple-900/20">Login</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden py-20 px-4 text-center">
+    <div class="absolute inset-0 bg-gradient-to-b from-purple-900/10 via-transparent to-transparent pointer-events-none"></div>
+    <div class="max-w-3xl mx-auto relative z-10">
+      <span class="text-xs font-bold uppercase tracking-widest bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full border border-purple-500/20">The #1 Best AI Image Generator</span>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-white mt-4 tracking-tight">AI Image Generator</h1>
+      <p class="text-slate-400 text-base sm:text-lg mt-3">Generate an image in seconds with the power of AI</p>
+      
+      <!-- Interactive Input Prompt Box -->
+      <div class="mt-8 bg-[#121826] border border-slate-800 rounded-2xl p-3 shadow-2xl max-w-2xl mx-auto flex flex-col sm:flex-row items-center gap-3">
+        <input type="text" placeholder="Describe the image you want to generate..." class="w-full bg-transparent text-white placeholder-slate-500 text-sm px-4 py-3 focus:outline-none">
+        <button class="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-medium rounded-xl transition shadow-lg shadow-purple-900/30 flex items-center justify-center space-x-2">
+          <span>Generate</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Harshita AI is the World's Best AI Image Generator (14 Features Grid) -->
+  <section class="py-16 px-4 max-w-7xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-white">Why Harshita AI is the world's best AI image generator</h2>
+      <p class="text-slate-400 text-sm mt-2">Discover what makes our AI engine superior for all your creative needs.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- Feature 1 -->
+      <div class="bg-[#121826] border border-slate-800/80 rounded-2xl p-6 flex items-start space-x-4 hover:border-purple-500/40 transition">
+        <div class="p-3 bg-purple-500/10 text-purple-400 rounded-xl shrink-0">✨</div>
+        <div>
+          <h3 class="text-lg font-bold text-white">1. Powerful AI image generation</h3>
+          <p class="text-slate-400 text-sm mt-1 leading-relaxed">Turn words into unique images with AI. Simply describe what you want to see and generate images based on your idea.</p>
         </div>
-    </header>
+      </div>
 
-    <div class="tools-container">
-        <!-- 1 -->
-        <div class="tool-card">
-            <span class="badge">TEXT</span>
-            <h3>ChatGPT</h3>
-            <p>बातचीत करने, कोडिंग करने और अपने सवालों के जवाब पाने के लिए सबसे बेहतरीन एआई चैटबॉट।</p>
-            <a href="https://chat.openai.com" target="_blank" class="tool-btn">Visit Tool</a>
+      <!-- Feature 2 -->
+      <div class="bg-[#121826] border border-slate-800/80 rounded-2xl p-6 flex items-start space-x-4 hover:border-purple-500/40 transition">
+        <div class="p-3 bg-blue-500/10 text-blue-400 rounded-xl shrink-0">💎</div>
+        <div>
+          <h3 class="text-lg font-bold text-white">2. High-quality images</h3>
+          <p class="text-slate-400 text-sm mt-1 leading-relaxed">Create polished, detailed images designed to look great across digital, social, marketing and creative projects.</p>
         </div>
-        
-        <!-- 2 -->
-        <div class="tool-card">
-            <span class="badge">IMAGE</span>
-            <h3>Midjourney</h3>
-            <p>टेक्स्ट प्रॉम्प्ट से canvas की ओर रियलिस्टिक तस्वीरें बनाने वाला एआई टूल।</p>
-            <a href="https://www.midjourney.com" target="_blank" class="tool-btn">Visit Tool</a>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="bg-[#121826] border border-slate-800/80 rounded-2xl p-6 flex items-start space-x-4 hover:border-purple-500/40 transition">
+        <div class="p-3 bg-pink-500/10 text-pink-400 rounded-xl shrink-0">🎨</div>
+        <div>
+          <h3 class="text-lg font-bold text-white">3. Huge creative variety</h3>
+          <p class="text-slate-400 text-sm mt-1 leading-relaxed">Generate images across a wide range of subjects, concepts, compositions and visual styles.</p>
         </div>
+      </div>
 
-        <!-- 3 -->
-        <div class="tool-card">
-            <span class="badge">AUDIO</span>
-            <h3>ElevenLabs</h3>
-            <p>दुनिया का सबसे एडवांस एआई वॉइस जनरेटर और टेक्स्ट-टू-स्पीच टूल।</p>
-            <a href="https://elevenlabs.io" target="_blank" class="tool-btn">Visit Tool</a>
+      <!-- Feature 4 -->
+      <div class="bg-[#121826] border border-slate-800/80 rounded-2xl p-6 flex items-start space-x-4 hover:border-purple-500/40 transition">
+        <div class="p-3 bg-indigo-500/10 text-indigo-400 rounded-xl shrink-0">🎛️</div>
+        <div>
+          <h3 class="text-lg font-bold text-white">4. Maximum choice</h3>
+          <p class="text-slate-400 text-sm mt-1 leading-relaxed">Generate multiple image options from your prompt, explore different directions and keep creating until you find the image you love.</p>
         </div>
+      </div>
 
-        <!-- 4 -->
-        <div class="tool-card">
-            <span class="badge">VIDEO</span>
-            <h3>Runway Gen-2</h3>
-            <p>सिर्फ टेक्स्ट या इमेज डालकर शानदार एआई वीडियो जनरेट करें।</p>
-            <a href="https://runwayml.com" target="_blank" class="tool-btn">Visit Tool</a>
+      <!-- Feature 5 -->
+      <div class="bg-[#121826] border border-slate-800/80 rounded-2xl p-6 flex items-start space-x-4 hover:border-purple-500/40 transition">
+        <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl shrink-0">⚡</div>
+        <div>
+          <h3 class="text-lg font-bold text-white">5. Lightning-fast generation</h3>
+          <p class="text-slate-400 text-sm mt-1 leading-relaxed">Go from an idea to an AI-generated image in seconds, making it easy to experiment and explore new creative directions.</p>
         </div>
+      </div>
 
-        <!-- 5 -->
-        <div class="tool-card">
-            <span class="badge">TEXT</span>
-            <h3>Claude AI</h3>
-            <p>लंबे आर्टिकल लिखने, कोडिंग करने और एडवांस रिसर्च के लिए बेस्ट एआई टूल।</p>
-            <a href="https://claude.ai" target="_blank" class="tool-btn">Visit Tool</a>
+      <!-- Feature 6 -->
+      <div class="bg-[#121826] border border-slate-800/80 rounded-2xl p-6 flex items-start space-x-4 hover:border-purple-500/40 transition">
+        <div class="p-3 bg-cyan-500/10 text-cyan-400 rounded-xl shrink-0">💡</div>
+        <div>
+          <h3 class="text-lg font-bold text-white">6. Easy to use</h3>
+          <p class="text-slate-400 text-sm mt-1 leading-relaxed">No complicated design software or AI expertise required. Describe your idea in everyday language and let Harshita AI do the rest.</p>
         </div>
+      </div>
 
-        <!-- 6 -->
-        <div class="tool-card">
-            <span class="badge">IMAGE</span>
-            <h3>Leonardo AI</h3>
-            <p>गेमिंग और आर्ट एसेट्स बनाने के लिए एक बेहतरीन 3D इमेज जनरेटर।</p>
-            <a href="https://leonardo.ai" target="_blank" class="tool-btn">Visit Tool</a>
+      <!-- Feature 7 -->
+      <div class="bg-[#121826] border border-slate-800/80 rounded-2xl p-6 flex items-start space-x-4 hover:border-purple-500/40 transition">
+        <div class="p-3 bg-amber-500/10 text-amber-400 rounded-xl shrink-0">🖼️</div>
+        <div>
+          <h3 class="text-lg font-bold text-white">7. Create images for anything</h3>
+          <p class="text-slate-400 text-sm mt-1 leading-relaxed">Generate visuals for websites, social media, presentations, advertising, marketing materials, creative projects and more.</p>
         </div>
+      </div>
 
-        <!-- 7 -->
-        <div class="tool-card">
-            <span class="badge">VIDEO</span>
-            <h3>Sora</h3>
-            <p>OpenAI का सबसे खतरनाक टेक्स्ट-टू-वीडियो एआई टूल।</p>
-            <a href="https://openai.com/sora" target="_blank" class="tool-btn">Visit Tool</a>
+      <!-- Feature 8 -->
+      <div class="bg-[#121826] border border-slate-800/80 rounded-2xl p-6 flex items-start space-x-4 hover:border-purple-500/40 transition">
+        <div class="p-3 bg-rose-500/10 text-rose-400 rounded-xl shrink-0">🚀</div>
+        <div>
+          <h3 class="text-lg font-bold text-white">8. Bring any idea to life</h3>
+          <p class="text-slate-400 text-sm mt-1 leading-relaxed">Create images that would be difficult to find in traditional image libraries. If you can describe it, AI can help you visualize it.</p>
         </div>
+      </div>
 
-        <!-- 8 -->
-        <div class="tool-card">
-            <span class="badge">TEXT</span>
-            <h3>v0 by Vercel</h3>
-            <p>सिर्फ बोलकर पूरी वेबसाइट का फ्रंटएंड कोड तैयार करवाने वाला एआई टूल।</p>
-            <a href="https://v0.dev" target="_blank" class="tool-btn">Visit Tool</a>
+      <!-- Feature 9 -->
+      <div class="bg-[#121826] border border-slate-800/80 rounded-2xl p-6 flex items-start space-x-4 hover:border-purple-500/40 transition">
+        <div class="p-3 bg-purple-500/10 text-purple-400 rounded-xl shrink-0">🔍</div>
+        <div>
+          <h3 class="text-lg font-bold text-white">9. Explore different styles</h3>
+          <p class="text-slate-400 text-sm mt-1 leading-relaxed">Experiment with different aesthetics and creative directions to find a look that matches your idea.</p>
         </div>
-    </div>
+      </div>
 
- <!-- Complete 20 AI Tools Grid Section -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl mx-auto px-4 py-8">
+      <!-- Feature 10 -->
+      <div class="bg-[#121826] border border-slate-800/80 rounded-2xl p-6 flex items-start space-x-4 hover:border-purple-500/40 transition">
+        <div class="p-3 bg-blue-500/10 text-blue-400 rounded-xl shrink-0">🎯</div>
+        <div>
+          <h3 class="text-lg font-bold text-white">10. Make every prompt your own</h3>
+          <p class="text-slate-400 text-sm mt-1 leading-relaxed">Adjust your description to control the subject, setting, mood, composition, colours and other details of your image.</p>
+        </div>
+      </div>
 
-  <!-- 1. ChatGPT -->
-  <div class="bg-[#121826] border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-950/20 transition-all duration-300 group">
-    <div>
-      <span class="text-[10px] font-bold tracking-widest uppercase bg-purple-500/10 text-purple-400 px-2.5 py-1 rounded-md">Text / Chat</span>
-      <h3 class="text-xl font-bold text-white mt-3 group-hover:text-purple-400 transition">ChatGPT</h3>
-      <p class="text-slate-400 text-sm mt-2 leading-relaxed">राइटींग, कोडिंग और ब्रेनस्टॉर्मिंग के लिए दुनिया का सबसे लोकप्रिय औरVersatile AI टूल।</p>
-    </div>
-    <div class="mt-6">
-      <a href="https://chatgpt.com" target="_blank" class="block w-full py-2.5 px-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-center font-medium rounded-xl transition-all shadow-lg shadow-purple-900/20">
-        Visit Tool
-      </a>
-    </div>
-  </div>
+      <!-- Feature 11 -->
+      <div class="bg-[#121826] border border-slate-800/80 rounded-2xl p-6 flex items-start space-x-4 hover:border-purple-500/40 transition">
+        <div class="p-3 bg-teal-500/10 text-teal-400 rounded-xl shrink-0">🧠</div>
+        <div>
+          <h3 class="text-lg font-bold text-white">11. Generate unique visual concepts</h3>
+          <p class="text-slate-400 text-sm mt-1 leading-relaxed">Quickly expose ideas and visual directions without starting from a blank canvas.</p>
+        </div>
+      </div>
 
-  <!-- 2. Claude AI -->
-  <div class="bg-[#121826] border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-950/20 transition-all duration-300 group">
-    <div>
-      <span class="text-[10px] font-bold tracking-widest uppercase bg-purple-500/10 text-purple-400 px-2.5 py-1 rounded-md">Text / Chat</span>
-      <h3 class="text-xl font-bold text-white mt-3 group-hover:text-purple-400 transition">Claude AI</h3>
-      <p class="text-slate-400 text-sm mt-2 leading-relaxed">नेचुरल राइटिंग, डीप थिंकिंग और लंबे डॉक्यूमेंट्स को आसानी से संभालने वाला शानदार AI।</p>
-    </div>
-    <div class="mt-6">
-      <a href="https://claude.ai" target="_blank" class="block w-full py-2.5 px-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-center font-medium rounded-xl transition-all shadow-lg shadow-purple-900/20">
-        Visit Tool
-      </a>
-    </div>
-  </div>
+      <!-- Feature 12 -->
+      <div class="bg-[#121826] border border-slate-800/80 rounded-2xl p-6 flex items-start space-x-4 hover:border-purple-500/40 transition">
+        <div class="p-3 bg-violet-500/10 text-violet-400 rounded-xl shrink-0">💼</div>
+        <div>
+          <h3 class="text-lg font-bold text-white">12. Made for creators and businesses</h3>
+          <p class="text-slate-400 text-sm mt-1 leading-relaxed">From entrepreneurs and marketers to designers and content creators, Harshita AI makes AI image generation accessible to everyone.</p>
+        </div>
+      </div>
 
-  <!-- 3. Google Gemini -->
-  <div class="bg-[#121826] border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-950/20 transition-all duration-300 group">
-    <div>
-      <span class="text-[10px] font-bold tracking-widest uppercase bg-blue-500/10 text-blue-400 px-2.5 py-1 rounded-md">Multimodal</span>
-      <h3 class="text-xl font-bold text-white mt-3 group-hover:text-purple-400 transition">Google Gemini</h3>
-      <p class="text-slate-400 text-sm mt-2 leading-relaxed">गूगल इकोसिस्टम और रियल-टाइम डेटा के साथ जुड़ा हुआ पावरफुल मल्टीमॉडल AI असिस्टेंट।</p>
-    </div>
-    <div class="mt-6">
-      <a href="https://gemini.google.com" target="_blank" class="block w-full py-2.5 px-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-center font-medium rounded-xl transition-all shadow-lg shadow-purple-900/20">
-        Visit Tool
-      </a>
-    </div>
-  </div>
+      <!-- Feature 13 -->
+      <div class="bg-[#121826] border border-slate-800/80 rounded-2xl p-6 flex items-start space-x-4 hover:border-purple-500/40 transition">
+        <div class="p-3 bg-fuchsia-500/10 text-fuchsia-400 rounded-xl shrink-0">🌐</div>
+        <div>
+          <h3 class="text-lg font-bold text-white">13. Part of Harshita AI</h3>
+          <p class="text-slate-400 text-sm mt-1 leading-relaxed">Take your AI-generated images further with Harshita AI's suite of easy-to-use design tools.</p>
+        </div>
+      </div>
 
-  <!-- 4. Perplexity AI -->
-  <div class="bg-[#121826] border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-950/20 transition-all duration-300 group">
-    <div>
-      <span class="text-[10px] font-bold tracking-widest uppercase bg-emerald-500/10 text-emerald-400 px-2.5 py-1 rounded-md">Search</span>
-      <h3 class="text-xl font-bold text-white mt-3 group-hover:text-purple-400 transition">Perplexity AI</h3>
-      <p class="text-slate-400 text-sm mt-2 leading-relaxed">इंटरनेट पर रियल-टाइम रिसर्च और सटीक सोर्सेज के साथ आंसर्स देने वाला स्मार्ट सर्च इंजन।</p>
-    </div>
-    <div class="mt-6">
-      <a href="https://www.perplexity.ai" target="_blank" class="block w-full py-2.5 px-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-center font-medium rounded-xl transition-all shadow-lg shadow-purple-900/20">
-        Visit Tool
-      </a>
-    </div>
-  </div>
-
-  <!-- 5. Microsoft Copilot -->
-  <div class="bg-[#121826] border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-950/20 transition-all duration-300 group">
-    <div>
-      <span class="text-[10px] font-bold tracking-widest uppercase bg-blue-500/10 text-blue-400 px-2.5 py-1 rounded-md">Productivity</span>
-      <h3 class="text-xl font-bold text-white mt-3 group-hover:text-purple-400 transition">Microsoft Copilot</h3>
-      <p class="text-slate-400 text-sm mt-2 leading-relaxed">विंडोज और ऑफिस ऐप्स के अंदर डेली वर्कफ़्लो को आसान बनाने वाला स्मार्ट असिस्टेंट।</p>
-    </div>
-    <div class="mt-6">
-      <a href="https://copilot.microsoft.com" target="_blank" class="block w-full py-2.5 px-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-center font-medium rounded-xl transition-all shadow-lg shadow-purple-900/20">
-        Visit Tool
-      </a>
-    </div>
-  </div>
-
-  <!-- 6. Midjourney -->
-  <div class="bg-[#121826] border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-950/20 transition-all duration-300 group">
-    <div>
-      <span class="text-[10px] font-bold tracking-widest uppercase bg-pink-500/10 text-pink-400 px-2.5 py-1 rounded-md">Image / Art</span>
-      <h3 class="text-xl font-bold text-white mt-3 group-hover:text-purple-400 transition">Midjourney</h3>
-      <p class="text-slate-400 text-sm mt-2 leading-relaxed">सिनेमैटिक और बेहद हाई-क्वालिटी रियलिस्टिक इमेज जनरेट करने वाला इंडस्ट्री लीडर।</p>
-    </div>
-    <div class="mt-6">
-      <a href="https://www.midjourney.com" target="_blank" class="block w-full py-2.5 px-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-center font-medium rounded-xl transition-all shadow-lg shadow-purple-900/20">
-        Visit Tool
-      </a>
-    </div>
-  </div>
-
-  <!-- 7. Leonardo AI -->
-  <div class="bg-[#121826] border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-950/20 transition-all duration-300 group">
-    <div>
-      <span class="text-[10px] font-bold tracking-widest uppercase bg-pink-500/10 text-pink-400 px-2.5 py-1 rounded-md">Image / Art</span>
-      <h3 class="text-xl font-bold text-white mt-3 group-hover:text-purple-400 transition">Leonardo AI</h3>
-      <p class="text-slate-400 text-sm mt-2 leading-relaxed">गेम एसेट्स, कॉन्सेप्ट आर्ट और डिटेल 2D/3D ग्राफिक्स के लिए दमदार इमेज जनरेटर।</p>
-    </div>
-    <div class="mt-6">
-      <a href="https://leonardo.ai" target="_blank" class="block w-full py-2.5 px-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-center font-medium rounded-xl transition-all shadow-lg shadow-purple-900/20">
-        Visit Tool
-      </a>
-    </div>
-  </div>
-
-  <!-- 8. ElevenLabs -->
-  <div class="bg-[#121826] border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-950/20 transition-all duration-300 group">
-    <div>
-      <span class="text-[10px] font-bold tracking-widest uppercase bg-amber-500/10 text-amber-400 px-2.5 py-1 rounded-md">Audio / Voice</span>
-      <h3 class="text-xl font-bold text-white mt-3 group-hover:text-purple-400 transition">ElevenLabs</h3>
-      <p class="text-slate-400 text-sm mt-2 leading-relaxed">अल्ट्रा-रियलिस्टिक ह्यूमन वॉइस, टेक्स्ट-टू-स्पीच और वॉइस क्लोनिंग के लिए बेस्ट टूल।</p>
-    </div>
-    <div class="mt-6">
-      <a href="https://elevenlabs.io" target="_blank" class="block w-full py-2.5 px-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-center font-medium rounded-xl transition-all shadow-lg shadow-purple-900/20">
-        Visit Tool
-      </a>
-    </div>
-  </div>
-
-  <!-- 9. Suno AI -->
-  <div class="bg-[#121826] border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-950/20 transition-all duration-300 group">
-    <div>
-      <span class="text-[10px] font-bold tracking-widest uppercase bg-amber-500/10 text-amber-400 px-2.5 py-1 rounded-md">Music</span>
-      <h3 class="text-xl font-bold text-white mt-3 group-hover:text-purple-400 transition">Suno AI</h3>
-      <p class="text-slate-400 text-sm mt-2 leading-relaxed">सिर्फ एक टेक्स्ट प्रॉम्प्ट या लिरिक्स से प्रोफेशनल वोकल्स और इंस्ट्रूमेंट्स के साथ पूरा गाना बनाएं।</p>
-    </div>
-    <div class="mt-6">
-      <a href="https://suno.com" target="_blank" class="block w-full py-2.5 px-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-center font-medium rounded-xl transition-all shadow-lg shadow-purple-900/20">
-        Visit Tool
-      </a>
-    </div>
-  </div>
-
-  <!-- 10. Cursor -->
-  <div class="bg-[#121826] border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-950/20 transition-all duration-300 group">
-    <div>
-      <span class="text-[10px] font-bold tracking-widest uppercase bg-cyan-500/10 text-cyan-400 px-2.5 py-1 rounded-md">Developer</span>
-      <h3 class="text-xl font-bold text-white mt-3 group-hover:text-purple-400 transition">Cursor AI</h3>
-      <p class="text-slate-400 text-sm mt-2 leading-relaxed">पूरे कोडबेस को समझकर कोडिंग को लाइटनिंग-फास्ट बनाने वाला एडवांस्ड AI कोड एडिटर।</p>
-    </div>
-    <div class="mt-6">
-      <a href="https://www.cursor.com" target="_blank" class="block w-full py-2.5 px-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-center font-medium rounded-xl transition-all shadow-lg shadow-purple-900/20">
-        Visit Tool
-      </a>
-    </div>
-  </div>
-
-  <!-- 11. v0 by Vercel -->
-  <div class="bg-[#121826] border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-950/20 transition-all duration-300 group">
-    <div>
-      <span class="text-[10px] font-bold tracking-widest uppercase bg-cyan-500/10 text-cyan-400 px-2.5 py-1 rounded-md">UI / Frontend</span>
-      <h3 class="text-xl font-bold text-white mt-3 group-hover:text-purple-400 transition">v0 by Vercel</h3>
-      <p class="text-slate-400 text-sm mt-2 leading-relaxed">सिर्फ टेक्स्ट कमांड से शानदार वेबसाइट UI कॉम्पोनेंट्स और लेआउट तैयार करने का टूल।</p>
-    </div>
-    <div class="mt-6">
-      <a href="https://v0.dev" target="_blank" class="block w-full py-2.5 px-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-center font-medium rounded-xl transition-all shadow-lg shadow-purple-900/20">
-        Visit Tool
-      </a>
-    </div>
-  </div>
-
-  <!-- 12. Gamma App -->
-  <div class="bg-[#121826] border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-950/20 transition-all duration-300 group">
-    <div>
-      <span class="text-[10px] font-bold tracking-widest uppercase bg-teal-500/10 text-teal-400 px-2.5 py-1 rounded-md">Presentation</span>
-      <h3 class="text-xl font-bold text-white mt-3 group-hover:text-purple-400 transition">Gamma App</h3>
-      <p class="text-slate-400 text-sm mt-2 leading-relaxed">कुछ ही सेकंड्स में प्रोफेशनल प्रेजेंटेशन, डॉक्यूमेंट्स और वेब पेज डिजाइन करें।</p>
-    </div>
-    <div class="mt-6">
-      <a href="https://gamma.app" target="_blank" class="block w-full py-2.5 px-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-center font-medium rounded-xl transition-all shadow-lg shadow-purple-900/20">
-        Visit Tool
-      </a>
-    </div>
-  </div>
-
-  <!-- 13. Sora -->
-  <div class="bg-[#121826] border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-950/20 transition-all duration-300 group">
-    <div>
-      <span class="text-[10px] font-bold tracking-widest uppercase bg-rose-500/10 text-rose-400 px-2.5 py-1 rounded-md">Video</span>
-      <h3 class="text-xl font-bold text-white mt-3 group-hover:text-purple-400 transition">Sora (OpenAI)</h3>
-      <p class="text-slate-400 text-sm mt-2 leading-relaxed">ओपनएआई का एडवांस्ड टेक्स्ट-टू-वीडियो मॉडल जो रियलिस्टिक और सिनेमैटिक वीडियो क्लिप्स बनाता है।</p>
-    </div>
-    <div class="mt-6">
-      <a href="https://openai.com/sora" target="_blank" class="block w-full py-2.5 px-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-center font-medium rounded-xl transition-all shadow-lg shadow-purple-900/20">
-        Visit Tool
-      </a>
-    </div>
-  </div>
-
-  <!-- 14. Runway -->
-  <div class="bg-[#121826] border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-950/20 transition-all duration-300 group">
-    <div>
-      <span class="text-[10px] font-bold tracking-widest uppercase bg-rose-500/10 text-rose-400 px-2.5 py-1 rounded-md">Video</span>
-      <h3 class="text-xl font-bold text-white mt-3 group-hover:text-purple-400 transition">Runway</h3>
-      <p class="text-slate-400 text-sm mt-2 leading-relaxed">फिल्ममेकर्स और क्रिएटर्स के लिए प्रोफेशनल वीडियो जेनरेशन और AI एडिटिंग सूट।</p>
-    </div>
-    <div class="mt-6">
-      <a href="https://runwayml.com" target="_blank" class="block w-full py-2.5 px-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-center font-medium rounded-xl transition-all shadow-lg shadow-purple-900/20">
-        Visit Tool
-      </a>
-    </div>
-  </div>
-
-  <!-- 15. Notion AI -->
-  <div class="bg-[#121826] border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-950/20 transition-all duration-300 group">
-    <div>
-      <span class="text-[10px] font-bold tracking-widest uppercase bg-blue-500/10 text-blue-400 px-2.5 py-1 rounded-md">Productivity</span>
-      <h3 class="text-xl font-bold text-white mt-3 group-hover:text-purple-400 transition">Notion AI</h3>
-      <p class="text-slate-400 text-sm mt-2 leading-relaxed">नोट्स, टास्क ट्रैकिंग और राइटिंग ऑटोमेशन के साथ एक स्मार्ट वर्कस्पेस एन्वायरमेंट।</p>
-    </div>
-    <div class="mt-6">
-      <a href="https://www.notion.so" target="_blank" class="block w-full py-2.5 px-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-center font-medium rounded-xl transition-all shadow-lg shadow-purple-900/20">
-        Visit Tool
-      </a>
-    </div>
-  </div>
-
-  <!-- 16. NotebookLM -->
-  <div class="bg-[#121826] border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-950/20 transition-all duration-300 group">
-    <div>
-      <span class="text-[10px] font-bold tracking-widest uppercase bg-emerald-500/10 text-emerald-400 px-2.5 py-1 rounded-md">Research</span>
-      <h3 class="text-xl font-bold text-white mt-3 group-hover:text-purple-400 transition">NotebookLM</h3>
-      <p class="text-slate-400 text-sm mt-2 leading-relaxed">अपने PDFs और डॉक्यूमेंट्स को अपलोड करके उनसे नोट्स और ऑडियो समरी बनाने का गूगल टूल।</p>
-    </div>
-    <div class="mt-6">
-      <a href="https://notebooklm.google.com" target="_blank" class="block w-full py-2.5 px-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-center font-medium rounded-xl transition-all shadow-lg shadow-purple-900/20">
-        Visit Tool
-      </a>
-    </div>
-  </div>
-
-  <!-- 17. Jasper AI -->
-  <div class="bg-[#121826] border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-950/20 transition-all duration-300 group">
-    <div>
-      <span class="text-[10px] font-bold tracking-widest uppercase bg-purple-500/10 text-purple-400 px-2.5 py-1 rounded-md">Marketing</span>
-      <h3 class="text-xl font-bold text-white mt-3 group-hover:text-purple-400 transition">Jasper AI</h3>
-      <p class="text-slate-400 text-sm mt-2 leading-relaxed">मार्कeters और ब्रांड्स के लिए एडवरटाइजिंग कॉपी और सोशल मीडिया कंटेंट बनाने का एक्सपर्ट टूल।</p>
-    </div>
-    <div class="mt-6">
-      <a href="https://www.jasper.ai" target="_blank" class="block w-full py-2.5 px-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-center font-medium rounded-xl transition-all shadow-lg shadow-purple-900/20">
-        Visit Tool
-      </a>
-    </div>
-  </div>
-
-  <!-- 18. HeyGen -->
-  <div class="bg-[#121826] border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-950/20 transition-all duration-300 group">
-    <div>
-      <span class="text-[10px] font-bold tracking-widest uppercase bg-rose-500/10 text-rose-400 px-2.5 py-1 rounded-md">Video / Avatar</span>
-      <h3 class="text-xl font-bold text-white mt-3 group-hover:text-purple-400 transition">HeyGen</h3>
-      <p class="text-slate-400 text-sm mt-2 leading-relaxed">रियल-लुकिंग AI अवतार्स और वीडियोज़ को अलग-अलग भाषाओं में ट्रांसलेट करने वाला प्लेटफॉर्म।</p>
-    </div>
-    <div class="mt-6">
-      <a href="https://www.heygen.com" target="_blank" class="block w-full py-2.5 px-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-center font-medium rounded-xl transition-all shadow-lg shadow-purple-900/20">
-        Visit Tool
-      </a>
-    </div>
-  </div>
-
-  <!-- 19. Bolt.new -->
-  <div class="bg-[#121826] border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-950/20 transition-all duration-300 group">
-    <div>
-      <span class="text-[10px] font-bold tracking-widest uppercase bg-cyan-500/10 text-cyan-400 px-2.5 py-1 rounded-md">Full-Stack</span>
-      <h3 class="text-xl font-bold text-white mt-3 group-hover:text-purple-400 transition">Bolt.new</h3>
-      <p class="text-slate-400 text-sm mt-2 leading-relaxed">ब्राउज़र के अंदर ही डायरेक्ट टेक्स्ट प्रॉम्प्ट से फुल-स्टैक वेब एप्लीकेशन बिल्ड और रन करें।</p>
-    </div>
-    <div class="mt-6">
-      <a href="https://bolt.new" target="_blank" class="block w-full py-2.5 px-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-center font-medium rounded-xl transition-all shadow-lg shadow-purple-900/20">
-        Visit Tool
-      </a>
-    </div>
-  </div>
-
-  <!-- 20. Grok AI -->
-  <div class="bg-[#121826] border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-950/20 transition-all duration-300 group">
-    <div>
-      <span class="text-[10px] font-bold tracking-widest uppercase bg-purple-500/10 text-purple-400 px-2.5 py-1 rounded-md">Chat / Realtime</span>
-      <h3 class="text-xl font-bold text-white mt-3 group-hover:text-purple-400 transition">Grok (xAI)</h3>
-      <p class="text-slate-400 text-sm mt-2 leading-relaxed">रियल-टाइम इंटरनेट डेटा और मजेदार इनसाइट्स के साथ xAI का दमदार कन्वर्सेशनल चैटबॉट।</p>
-    </div>
-    <div class="mt-6">
-      <a href="https://grok.xai.com" target="_blank" class="block w-full py-2.5 px-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-center font-medium rounded-xl transition-all shadow-lg shadow-purple-900/20">
-        Visit Tool
-      </a>
-    </div>
-  </div>
+      <!-- Feature 14 -->
+      <div class="bg-[#121826] border border-slate-800/80 rounded-2xl p-6 flex items-start space-x-4 hover:border-purple-500/40 transition">
+        <div class="p-3 bg-sky-500/10 text-sky-400 rounded-xl shrink-0">📱</div>
+        <div>
+          <h3 class="text-lg font-bold text-white">14. Create social content</h3>
+          <p class="text-slate-400 text-sm mt-1 leading-relaxed">Use your images to create eye-catching content for Instagram, Facebook, TikTok, LinkedIn, YouTube and more.</p>
+        </div>
+      </div>
 
     </div>
-    
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="py-16 bg-[#0E1320] border-t border-b border-slate-800 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-purple-400 bg-purple-500/10 px-3 py-1 rounded-full">How It Works</span>
+        <h2 class="text-3xl font-bold text-white mt-3">Creating the perfect AI image is easy with Harshita AI</h2>
+        <p class="text-slate-400 text-sm mt-2">Follow these simple steps to turn your imagination into reality.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-[#121826] border border-slate-800 p-6 rounded-2xl text-center">
+          <div class="w-12 h-12 bg-purple-600/20 text-purple-400 rounded-xl flex items-center justify-center font-bold text-lg mx-auto mb-4">1</div>
+          <h3 class="text-lg font-bold text-white">Write your prompt</h3>
+          <p class="text-slate-400 text-sm mt-2">Describe the image you'd like AI to create. Be as simple or detailed as you like.</p>
+        </div>
+        <div class="bg-[#121826] border border-slate-800 p-6 rounded-2xl text-center">
+          <div class="w-12 h-12 bg-purple-600/20 text-purple-400 rounded-xl flex items-center justify-center font-bold text-lg mx-auto mb-4">2</div>
+          <h3 class="text-lg font-bold text-white">Generate images</h3>
+          <p class="text-slate-400 text-sm mt-2">Submit your prompt and let Harshita AI's engine create images inspired by your description.</p>
+        </div>
+        <div class="bg-[#121826] border border-slate-800 p-6 rounded-2xl text-center">
+          <div class="w-12 h-12 bg-purple-600/20 text-purple-400 rounded-xl flex items-center justify-center font-bold text-lg mx-auto mb-4">3</div>
+          <h3 class="text-lg font-bold text-white">Download & Share</h3>
+          <p class="text-slate-400 text-sm mt-2">Save your favourite image and use it wherever you need, from social posts to websites.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 px-4 max-w-4xl mx-auto">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl font-bold text-white">AI Image Generator FAQ</h2>
+      <p class="text-slate-400 text-sm mt-2">Got questions? We've got answers.</p>
+    </div>
+
+    <div class="space-y-4">
+      <div class="bg-[#121826] border border-slate-800 rounded-xl p-5">
+        <h3 class="text-white font-semibold text-base">What is an AI image generator?</h3>
+        <p class="text-slate-400 text-sm mt-2">An AI image generator is a tool that creates images from text descriptions. You describe what you want to see, and artificial intelligence generates an image based on your prompt.</p>
+      </div>
+      <div class="bg-[#121826] border border-slate-800 rounded-xl p-5">
+        <h3 class="text-white font-semibold text-base">How do I generate an AI image?</h3>
+        <p class="text-slate-400 text-sm mt-2">Simply type a description of what you want to visualize in the prompt box above and click generate to get instant variations.</p>
+      </div>
+      <div class="bg-[#121826] border border-slate-800 rounded-xl p-5">
+        <h3 class="text-white font-semibold text-base">Do I need design experience to generate AI images?</h3>
+        <p class="text-slate-400 text-sm mt-2">Not at all! Anyone can use natural everyday language to create professional-grade visuals without design skills.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 py-8 px-4 text-center text-slate-500 text-xs">
+    <p>© 2026 Harshita AI. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
