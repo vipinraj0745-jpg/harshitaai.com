@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Harshita AI - Explore AI Tools</title>
+  <title>Harshita AI</title>
   <style>
     * {
       box-sizing: border-box;
@@ -14,29 +14,46 @@
     body {
       background-color: #07090e;
       color: #ffffff;
-      padding: 20px;
+      padding: 10px;
     }
-    /* Header & Search Section */
-    .header {
+    /* Top Header Navbar */
+    .navbar {
       display: flex;
-      flex-direction: column;
-      gap: 15px;
-      max-width: 600px;
-      margin: 0 auto 30px auto;
-      text-align: center;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 10px;
+      margin-bottom: 20px;
     }
-    .header h1 {
-      font-size: 26px;
+    .logo {
+      font-size: 20px;
+      font-weight: 600;
       color: #a855f7;
+    }
+    .explore-btn {
+      background: linear-gradient(135deg, #2563eb, #3b82f6);
+      color: white;
+      border: none;
+      padding: 9px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    }
+
+    /* Search Section */
+    .search-container {
+      padding: 0 5px 20px 5px;
     }
     .search-box {
       width: 100%;
-      padding: 12px 18px;
+      padding: 14px 16px;
       background-color: #111827;
       border: 1px solid #1f2937;
       border-radius: 12px;
       color: #ffffff;
-      font-size: 16px;
+      font-size: 15px;
       outline: none;
       transition: border-color 0.3s;
     }
@@ -46,51 +63,67 @@
 
     /* Tools Container */
     .tools-container {
-      max-width: 600px;
-      margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 16px;
     }
     .tool-card {
       background-color: #111827;
       border: 1px solid #1f2937;
       border-radius: 16px;
-      padding: 20px;
+      padding: 18px;
       display: flex;
       flex-direction: column;
       gap: 12px;
     }
-    .tool-header {
+    .tool-top {
       display: flex;
       justify-content: space-between;
+      align-items: flex-start;
+    }
+    .tool-icon-title {
+      display: flex;
+      gap: 12px;
       align-items: center;
     }
-    .tool-title {
+    .tool-icon {
+      width: 42px;
+      height: 42px;
+      background-color: #1e3a8a;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #38bdf8;
       font-size: 18px;
+    }
+    .tool-title {
+      font-size: 17px;
       font-weight: 600;
       color: #ffffff;
     }
     .badge {
       background-color: #1e293b;
       color: #60a5fa;
-      font-size: 12px;
+      font-size: 11px;
       padding: 4px 10px;
       border-radius: 20px;
       font-weight: 500;
     }
     .tool-desc {
-      font-size: 14px;
+      font-size: 13px;
       color: #94a3b8;
       line-height: 1.5;
+    }
+    .divider {
+      border: none;
+      border-top: 1px solid #1f2937;
+      margin: 2px 0;
     }
     .tool-footer {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 10px;
-      border-top: 1px solid #1f2937;
-      padding-top: 12px;
     }
     .official-text {
       font-size: 12px;
@@ -101,8 +134,9 @@
       color: white;
       border: none;
       padding: 8px 16px;
-      border-radius: 8px;
-      font-size: 14px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 500;
       cursor: pointer;
       text-decoration: none;
       transition: background-color 0.2s;
@@ -115,29 +149,24 @@
     .about-us-footer {
       background-color: #0b0f19;
       color: #94a3b8;
-      padding: 40px 20px;
+      padding: 25px 15px;
       text-align: center;
       border-top: 1px solid #1e293b;
-      margin-top: 50px;
-      border-radius: 16px;
-    }
-    .footer-content {
-      max-width: 600px;
-      margin: 0 auto;
+      margin-top: 30px;
+      border-radius: 14px;
     }
     .about-us-footer h3 {
       color: #ffffff;
-      font-size: 20px;
-      margin-bottom: 10px;
+      font-size: 17px;
+      margin-bottom: 8px;
     }
     .about-us-footer p {
-      font-size: 14px;
-      line-height: 1.6;
-      margin-bottom: 15px;
+      font-size: 13px;
+      line-height: 1.5;
       color: #94a3b8;
     }
     .copyright {
-      font-size: 12px;
+      font-size: 11px;
       color: #64748b;
       margin-top: 10px;
     }
@@ -145,21 +174,30 @@
 </head>
 <body>
 
-  <!-- Header & Search Bar -->
-  <div class="header">
-    <h1>Harshita AI</h1>
+  <!-- Header Navbar -->
+  <div class="navbar">
+    <div class="logo">Harshita AI</div>
+    <a href="#" class="explore-btn">Explore 45 Tools</a>
+  </div>
+
+  <!-- Search Box -->
+  <div class="search-container">
     <input type="text" id="searchInput" class="search-box" placeholder="Search AI tools (e.g., Copilot, Grok)..." onkeyup="searchTools()">
   </div>
 
-  <!-- Tools List Section -->
+  <!-- Tools List -->
   <div class="tools-container" id="toolsList">
     
     <div class="tool-card" data-name="microsoft copilot">
-      <div class="tool-header">
-        <span class="tool-title">Microsoft Copilot</span>
+      <div class="tool-top">
+        <div class="tool-icon-title">
+          <div class="tool-icon">🌐</div>
+          <span class="tool-title">Microsoft Copilot</span>
+        </div>
         <span class="badge">TEXT & CHAT</span>
       </div>
       <p class="tool-desc">AI-powered productivity companion built into Windows and web.</p>
+      <hr class="divider">
       <div class="tool-footer">
         <span class="official-text">Official Tool</span>
         <a href="https://copilot.microsoft.com" target="_blank" class="launch-btn">Launch →</a>
@@ -167,11 +205,15 @@
     </div>
 
     <div class="tool-card" data-name="xai grok">
-      <div class="tool-header">
-        <span class="tool-title">xAI Grok</span>
+      <div class="tool-top">
+        <div class="tool-icon-title">
+          <div class="tool-icon">⚡</div>
+          <span class="tool-title">xAI Grok</span>
+        </div>
         <span class="badge">TEXT & CHAT</span>
       </div>
       <p class="tool-desc">Real-time witty AI chatbot integrated with X (Twitter).</p>
+      <hr class="divider">
       <div class="tool-footer">
         <span class="official-text">Official Tool</span>
         <a href="https://x.ai" target="_blank" class="launch-btn">Launch →</a>
@@ -182,16 +224,14 @@
 
   <!-- About Us Section -->
   <footer class="about-us-footer">
-    <div class="footer-content">
-      <h3>About Harshita AI</h3>
-      <p>
-        Welcome to <strong>Harshita AI</strong> – Your ultimate destination for discovering and exploring the world's best Artificial Intelligence tools. We bring top-tier AI technologies together in one seamless platform to empower your productivity and creativity.
-      </p>
-      <p class="copyright">&copy; 2026 Harshita AI. All rights reserved.</p>
-    </div>
+    <h3>About Harshita AI</h3>
+    <p>
+      Welcome to <strong>Harshita AI</strong> – Your ultimate destination for discovering and exploring the world's best Artificial Intelligence tools in one place.
+    </p>
+    <p class="copyright">&copy; 2026 Harshita AI. All rights reserved.</p>
   </footer>
 
-  <!-- Search Filter Script -->
+  <!-- Search Script -->
   <script>
     function searchTools() {
       let input = document.getElementById('searchInput').value.toLowerCase();
@@ -212,5 +252,3 @@
 
 </body>
 </html>
-
-  
