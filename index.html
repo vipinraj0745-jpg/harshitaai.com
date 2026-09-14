@@ -1,254 +1,306 @@
-<!DOCTYPE html>
-<html lang="en">
+  <!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Harshita AI</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    body {
-      background-color: #07090e;
-      color: #ffffff;
-      padding: 10px;
-    }
-    /* Top Header Navbar */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 10px;
-      margin-bottom: 20px;
-    }
-    .logo {
-      font-size: 20px;
-      font-weight: 600;
-      color: #a855f7;
-    }
-    .explore-btn {
-      background: linear-gradient(135deg, #2563eb, #3b82f6);
-      color: white;
-      border: none;
-      padding: 9px 16px;
-      border-radius: 20px;
-      font-size: 13px;
-      font-weight: 500;
-      cursor: pointer;
-      text-decoration: none;
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-    }
-
-    /* Search Section */
-    .search-container {
-      padding: 0 5px 20px 5px;
-    }
-    .search-box {
-      width: 100%;
-      padding: 14px 16px;
-      background-color: #111827;
-      border: 1px solid #1f2937;
-      border-radius: 12px;
-      color: #ffffff;
-      font-size: 15px;
-      outline: none;
-      transition: border-color 0.3s;
-    }
-    .search-box:focus {
-      border-color: #3b82f6;
-    }
-
-    /* Tools Container */
-    .tools-container {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .tool-card {
-      background-color: #111827;
-      border: 1px solid #1f2937;
-      border-radius: 16px;
-      padding: 18px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .tool-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
-    .tool-icon-title {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-    }
-    .tool-icon {
-      width: 42px;
-      height: 42px;
-      background-color: #1e3a8a;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #38bdf8;
-      font-size: 18px;
-    }
-    .tool-title {
-      font-size: 17px;
-      font-weight: 600;
-      color: #ffffff;
-    }
-    .badge {
-      background-color: #1e293b;
-      color: #60a5fa;
-      font-size: 11px;
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-weight: 500;
-    }
-    .tool-desc {
-      font-size: 13px;
-      color: #94a3b8;
-      line-height: 1.5;
-    }
-    .divider {
-      border: none;
-      border-top: 1px solid #1f2937;
-      margin: 2px 0;
-    }
-    .tool-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .official-text {
-      font-size: 12px;
-      color: #64748b;
-    }
-    .launch-btn {
-      background-color: #2563eb;
-      color: white;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 10px;
-      font-size: 13px;
-      font-weight: 500;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background-color 0.2s;
-    }
-    .launch-btn:hover {
-      background-color: #1d4ed8;
-    }
-
-    /* About Us Footer */
-    .about-us-footer {
-      background-color: #0b0f19;
-      color: #94a3b8;
-      padding: 25px 15px;
-      text-align: center;
-      border-top: 1px solid #1e293b;
-      margin-top: 30px;
-      border-radius: 14px;
-    }
-    .about-us-footer h3 {
-      color: #ffffff;
-      font-size: 17px;
-      margin-bottom: 8px;
-    }
-    .about-us-footer p {
-      font-size: 13px;
-      line-height: 1.5;
-      color: #94a3b8;
-    }
-    .copyright {
-      font-size: 11px;
-      color: #64748b;
-      margin-top: 10px;
-    }
-  </style>
+  <title>Harshita AI - All-in-One Website Builder & Top 45 AI Tools Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-blue-500 selection:text-white">
 
-  <!-- Header Navbar -->
-  <div class="navbar">
-    <div class="logo">Harshita AI</div>
-    <a href="#" class="explore-btn">Explore 45 Tools</a>
-  </div>
+  <!-- Header / Navbar -->
+  <header class="border-b border-slate-800/80 sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <span class="text-xl font-bold bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">Harshita AI</span>
+        <span class="text-xs bg-blue-500/10 text-blue-400 px-2.5 py-1 rounded-full border border-blue-500/20 hidden sm:inline-block">Studio & 45+ Tools</span>
+      </div>
+      <nav class="hidden md:flex space-x-6 text-sm font-medium text-slate-300">
+        <a href="#generator" class="hover:text-blue-400 transition">AI Generator</a>
+        <a href="#templates" class="hover:text-blue-400 transition">Templates</a>
+        <a href="#aitools" class="hover:text-blue-400 transition">45 AI Tools</a>
+        <a href="#features" class="hover:text-blue-400 transition">Features</a>
+      </nav>
+      <div>
+        <a href="#aitools" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-xl transition shadow-lg shadow-blue-600/30">Explore 45 Tools</a>
+      </div>
+    </div>
+  </header>
 
-  <!-- Search Box -->
-  <div class="search-container">
-    <input type="text" id="searchInput" class="search-box" placeholder="Search AI tools (e.g., Copilot, Grok)..." onkeyup="searchTools()">
-  </div>
-
-  <!-- Tools List -->
-  <div class="tools-container" id="toolsList">
+  <!-- Hero & Smart Design Bar Section -->
+  <section class="py-16 px-4 text-center max-w-5xl mx-auto relative overflow-hidden">
+    <div class="absolute inset-0 bg-blue-500/5 blur-3xl rounded-full -z-10 pointer-events-none"></div>
     
-    <div class="tool-card" data-name="microsoft copilot">
-      <div class="tool-top">
-        <div class="tool-icon-title">
-          <div class="tool-icon">🌐</div>
-          <span class="tool-title">Microsoft Copilot</span>
-        </div>
-        <span class="badge">TEXT & CHAT</span>
+    <span class="text-xs font-bold uppercase tracking-widest bg-blue-500/10 text-blue-400 px-3.5 py-1.5 rounded-full border border-blue-500/20">The #1 Next-Gen AI Platform</span>
+    <h1 class="text-3xl sm:text-6xl font-extrabold text-white mt-4 tracking-tight">What would you like to design?</h1>
+    <p class="text-slate-400 text-base sm:text-lg mt-3 max-w-2xl mx-auto">Generate fully functioning websites, stunning AI imagery, custom logos, and access 45+ top AI tools instantly.</p>
+
+    <!-- Search & Filter Bar -->
+    <div class="mt-8 bg-slate-900/90 border border-slate-800 rounded-2xl p-3 sm:p-4 shadow-2xl max-w-3xl mx-auto flex flex-col sm:flex-row items-center gap-3">
+      <div class="flex items-center space-x-2 w-full sm:w-auto px-3 py-2 bg-slate-800/60 rounded-xl border border-slate-700/50 text-sm text-slate-300">
+        <span>🌐</span>
+        <select class="bg-transparent focus:outline-none text-white cursor-pointer">
+          <option class="bg-slate-900">Website</option>
+          <option class="bg-slate-900">AI Image</option>
+          <option class="bg-slate-900">Logo</option>
+          <option class="bg-slate-900">Business Card</option>
+        </select>
       </div>
-      <p class="tool-desc">AI-powered productivity companion built into Windows and web.</p>
-      <hr class="divider">
-      <div class="tool-footer">
-        <span class="official-text">Official Tool</span>
-        <a href="https://copilot.microsoft.com" target="_blank" class="launch-btn">Launch →</a>
+      <input type="text" id="mainSearchInput" placeholder="Enter keywords (e.g., Artisanal Breads, Tech Startup)..." class="w-full bg-transparent border-none text-white placeholder-slate-500 text-sm focus:outline-none px-2">
+      <button onclick="triggerSearch()" class="w-full sm:w-auto px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm rounded-xl transition shadow-md whitespace-nowrap cursor-pointer">Generate AI</button>
+    </div>
+  </section>
+
+  <!-- Template Grid Showcase Section -->
+  <section id="templates" class="py-12 px-4 max-w-7xl mx-auto border-t border-slate-900">
+    <div class="flex justify-between items-end mb-8">
+      <div>
+        <h2 class="text-2xl font-bold text-white">Popular AI Templates & Designs</h2>
+        <p class="text-slate-400 text-sm mt-1">Select a template to preview or customize instantly.</p>
+      </div>
+      <span class="text-xs text-blue-400 font-semibold cursor-pointer hover:underline hidden sm:block">View all 100+ templates →</span>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <!-- Template 1 -->
+      <div onclick="openTemplatePreview('Artisanal Breads & Pastries', 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80')" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:border-blue-500/50 transition cursor-pointer shadow-lg">
+        <div class="h-48 overflow-hidden relative">
+          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" alt="Bread" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <span class="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-white text-xs px-2.5 py-1 rounded-lg border border-white/10">Bakery & Food</span>
+        </div>
+        <div class="p-5">
+          <h3 class="font-bold text-white text-base">Artisanal Breads & Pastries</h3>
+          <p class="text-slate-400 text-xs mt-1">Fully responsive modern store template with custom font selector.</p>
+        </div>
+      </div>
+
+      <!-- Template 2 -->
+      <div onclick="openTemplatePreview('Cyberpunk Startup Launch', 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80')" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:border-blue-500/50 transition cursor-pointer shadow-lg">
+        <div class="h-48 overflow-hidden relative">
+          <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" alt="Tech" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <span class="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-white text-xs px-2.5 py-1 rounded-lg border border-white/10">Coming Soon</span>
+        </div>
+        <div class="p-5">
+          <h3 class="font-bold text-white text-base">Cyberpunk Tech Startup</h3>
+          <p class="text-slate-400 text-xs mt-1">Sleek dark theme layout optimized for high conversions.</p>
+        </div>
+      </div>
+
+      <!-- Template 3 -->
+      <div onclick="openTemplatePreview('Modern Creative Portfolio', 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80')" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:border-blue-500/50 transition cursor-pointer shadow-lg">
+        <div class="h-48 overflow-hidden relative">
+          <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80" alt="Portfolio" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <span class="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-white text-xs px-2.5 py-1 rounded-lg border border-white/10">Portfolio</span>
+        </div>
+        <div class="p-5">
+          <h3 class="font-bold text-white text-base">Creative Designer Portfolio</h3>
+          <p class="text-slate-400 text-xs mt-1">Showcase your graphics, photography and projects easily.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Functional AI Image Generator Section -->
+  <section id="generator" class="py-12 px-4 max-w-3xl mx-auto">
+    <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl">
+      <div class="flex items-center space-x-3 mb-4">
+        <div class="w-10 h-10 rounded-xl bg-blue-600/20 text-blue-400 flex items-center justify-center font-bold text-xl">✨</div>
+        <div>
+          <h2 class="text-xl font-bold text-white">AI Image & Asset Generator</h2>
+          <p class="text-slate-400 text-xs">Transform text descriptions into visual elements instantly.</p>
+        </div>
+      </div>
+      
+      <textarea id="promptInput" rows="3" placeholder="Describe what you want to create (e.g., A futuristic luxury car in neon rain)..." class="w-full bg-slate-950 border border-slate-800 rounded-2xl p-4 text-white placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition resize-none"></textarea>
+
+      <div class="mt-4 flex justify-end">
+        <button id="generateBtn" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold rounded-xl transition shadow-lg shadow-blue-600/30 cursor-pointer flex items-center space-x-2">
+          <span>Generate Now</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </button>
+      </div>
+
+      <!-- Result Container -->
+      <div id="resultContainer" class="mt-6 hidden text-center bg-slate-950 p-6 rounded-2xl border border-slate-800">
+        <div id="loadingText" class="text-blue-400 text-sm font-medium animate-pulse mb-3">AI image bana raha hai, thoda wait karein...</div>
+        <div class="relative group inline-block w-full">
+          <img id="generatedImage" src="" alt="AI Generated Art" class="rounded-xl mx-auto border border-slate-800 max-h-[400px] object-contain w-full cursor-pointer hover:opacity-90 transition">
+        </div>
+        <p class="text-xs text-slate-400 mt-2">💡 Click on image to open full size in new tab</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOP 45 AI TOOLS DIRECTORY SECTION -->
+  <section id="aitools" class="py-16 px-4 max-w-7xl mx-auto border-t border-slate-900">
+    <div class="text-center mb-10">
+      <span class="text-xs font-bold uppercase tracking-widest bg-purple-500/10 text-purple-400 px-3.5 py-1.5 rounded-full border border-purple-500/20">Comprehensive Hub</span>
+      <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-4">Top 45 AI Tools Directory</h2>
+      <p class="text-slate-400 text-sm mt-2 max-w-xl mx-auto">Explore and launch all the world's leading artificial intelligence platforms in one single hub.</p>
+      
+      <!-- Tool Search Bar -->
+      <div class="mt-6 bg-slate-900 border border-slate-800 rounded-2xl p-3 max-w-xl mx-auto flex items-center gap-3 shadow-xl">
+        <span class="text-lg pl-2">🔍</span>
+        <input type="text" id="toolSearch" onkeyup="filterTools()" placeholder="Search among 45 AI tools (e.g., ChatGPT, Midjourney, Cursor)..." class="w-full bg-transparent border-none text-white placeholder-slate-500 text-sm focus:outline-none px-2">
+      </div>
+
+      <!-- Category Filters -->
+      <div class="flex flex-wrap justify-center gap-2 mt-6">
+        <button onclick="filterCategory('All')" class="cat-btn px-4 py-2 bg-blue-600 text-white text-xs font-semibold rounded-xl transition cursor-pointer">All 45 Tools</button>
+        <button onclick="filterCategory('Text & Chat')" class="cat-btn px-4 py-2 bg-slate-900 border border-slate-800 text-slate-300 hover:text-white text-xs font-semibold rounded-xl transition cursor-pointer">💬 Text & Chat</button>
+        <button onclick="filterCategory('Image & Art')" class="cat-btn px-4 py-2 bg-slate-900 border border-slate-800 text-slate-300 hover:text-white text-xs font-semibold rounded-xl transition cursor-pointer">🎨 Image & Art</button>
+        <button onclick="filterCategory('Video & Audio')" class="cat-btn px-4 py-2 bg-slate-900 border border-slate-800 text-slate-300 hover:text-white text-xs font-semibold rounded-xl transition cursor-pointer">🎬 Video & Audio</button>
+        <button onclick="filterCategory('Coding & Dev')" class="cat-btn px-4 py-2 bg-slate-900 border border-slate-800 text-slate-300 hover:text-white text-xs font-semibold rounded-xl transition cursor-pointer">💻 Coding & Dev</button>
+        <button onclick="filterCategory('Productivity')" class="cat-btn px-4 py-2 bg-slate-900 border border-slate-800 text-slate-300 hover:text-white text-xs font-semibold rounded-xl transition cursor-pointer">⚡ Productivity</button>
       </div>
     </div>
 
-    <div class="tool-card" data-name="xai grok">
-      <div class="tool-top">
-        <div class="tool-icon-title">
-          <div class="tool-icon">⚡</div>
-          <span class="tool-title">xAI Grok</span>
-        </div>
-        <span class="badge">TEXT & CHAT</span>
-      </div>
-      <p class="tool-desc">Real-time witty AI chatbot integrated with X (Twitter).</p>
-      <hr class="divider">
-      <div class="tool-footer">
-        <span class="official-text">Official Tool</span>
-        <a href="https://x.ai" target="_blank" class="launch-btn">Launch →</a>
-      </div>
+    <!-- 45 Tools Grid -->
+    <div id="toolsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Injected dynamically via JS -->
+    </div>
+  </section>
+
+  <!-- Features Section (Custom Domain Underline, Hosting, etc.) -->
+  <section id="features" class="py-16 px-4 max-w-7xl mx-auto border-t border-slate-900">
+    <div class="text-center mb-12">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white">Why creators love Harshita AI</h2>
+      <p class="text-slate-400 text-sm mt-2">Packed with advanced builder features for maximum performance.</p>
     </div>
 
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-slate-900/60 border border-slate-800/80 p-6 rounded-2xl">
+        <div class="text-2xl mb-3">⚡</div>
+        <h3 class="font-bold text-white">Lightning Fast Generation</h3>
+        <p class="text-slate-400 text-xs sm:text-sm mt-2">Generate fully functioning, responsive websites and assets with the world's fastest AI engine.</p>
+      </div>
+      <div class="bg-slate-900/60 border border-slate-800/80 p-6 rounded-2xl">
+        <div class="text-2xl mb-3">🔗</div>
+        <h3 class="font-bold text-white">Connect Your Own Domain</h3>
+        <p class="text-slate-400 text-xs sm:text-sm mt-2">Easily link a <span class="text-blue-400 underline cursor-pointer">custom domain</span> you already own, or publish instantly with a free branded URL.</p>
+      </div>
+      <div class="bg-slate-900/60 border border-slate-800/80 p-6 rounded-2xl">
+        <div class="text-2xl mb-3">🛡️</div>
+        <h3 class="font-bold text-white">AI-Powered Hosting Included</h3>
+        <p class="text-slate-400 text-xs sm:text-sm mt-2">Your website comes ready to run with secure cloud infrastructure — no extra providers or setup needed.</p>
+      </div>
+      <div class="bg-slate-900/60 border border-slate-800/80 p-6 rounded-2xl">
+        <div class="text-2xl mb-3">🎨</div>
+        <h3 class="font-bold text-white">AI Logo & Branding</h3>
+        <p class="text-slate-400 text-xs sm:text-sm mt-2">Generate a <span class="text-blue-400 underline cursor-pointer">professional logo</span> and matching business cards in seconds using built-in AI design tools.</p>
+      </div>
+      <div class="bg-slate-900/60 border border-slate-800/80 p-6 rounded-2xl">
+        <div class="text-2xl mb-3">📱</div>
+        <h3 class="text-lg font-bold text-white">Social & Marketing Kit</h3>
+        <p class="text-slate-400 text-xs sm:text-sm mt-2">Scroll-stopping graphics made easy for Instagram, TikTok, and YouTube with 30+ built-in templates.</p>
+      </div>
+      <div class="bg-slate-900/60 border border-slate-800/80 p-6 rounded-2xl">
+        <div class="text-2xl mb-3">✏️</div>
+        <h3 class="font-bold text-white">Drag & Drop Editor</h3>
+        <p class="text-slate-400 text-xs sm:text-sm mt-2">Fine-tune fonts, color palettes, spacing, and design layouts directly through the browser.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Template Preview Modal -->
+  <div id="templateModal" class="fixed inset-0 bg-black/80 backdrop-blur-md hidden items-center justify-center z-50 p-4">
+    <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-xl w-full p-6 relative shadow-2xl">
+      <button onclick="closeTemplateModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl font-bold">✕</button>
+      <h3 id="modalTemplateTitle" class="text-xl font-bold text-white mb-2">Template Preview</h3>
+      <p class="text-slate-400 text-xs mb-4">Customize your AI template with instant font styles and layout controls.</p>
+      
+      <div class="rounded-xl overflow-hidden mb-4 border border-slate-800 h-56">
+        <img id="modalTemplateImg" src="" alt="Preview" class="w-full h-full object-cover">
+      </div>
+
+      <div class="flex items-center justify-between bg-slate-950 p-3 rounded-xl border border-slate-800 mb-4">
+        <span class="text-xs text-slate-300 font-medium">Typography Styles:</span>
+        <div class="flex space-x-2">
+          <span class="w-8 h-8 rounded-lg bg-slate-800 text-white flex items-center justify-center font-serif text-xs border border-slate-700 cursor-pointer">Aa</span>
+          <span class="w-8 h-8 rounded-lg bg-slate-800 text-white flex items-center justify-center font-sans text-xs border border-slate-700 cursor-pointer">Aa</span>
+          <span class="w-8 h-8 rounded-lg bg-slate-800 text-white flex items-center justify-center font-mono text-xs border border-slate-700 cursor-pointer">Aa</span>
+        </div>
+      </div>
+
+      <button onclick="alert('Template successfully initialized! Redirecting to live builder...')" class="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm rounded-xl transition shadow-md">Customize & Publish Website</button>
+    </div>
   </div>
 
-  <!-- About Us Section -->
-  <footer class="about-us-footer">
-    <h3>About Harshita AI</h3>
-    <p>
-      Welcome to <strong>Harshita AI</strong> – Your ultimate destination for discovering and exploring the world's best Artificial Intelligence tools in one place.
-    </p>
-    <p class="copyright">&copy; 2026 Harshita AI. All rights reserved.</p>
+  <!-- Footer -->
+  <footer class="border-t border-slate-900 py-8 px-4 text-center text-slate-500 text-xs">
+    <p>© 2026 Harshita AI. All rights reserved.</p>
   </footer>
 
-  <!-- Search Script -->
+  <!-- JavaScript functionality -->
   <script>
-    function searchTools() {
-      let input = document.getElementById('searchInput').value.toLowerCase();
-      let cards = document.getElementsByClassName('tool-card');
-
-      for (let i = 0; i < cards.length; i++) {
-        let name = cards[i].getAttribute('data-name');
-        let desc = cards[i].getElementsByClassName('tool-desc')[0].innerText.toLowerCase();
-        
-        if (name.includes(input) || desc.includes(input)) {
-          cards[i].style.display = "flex";
-        } else {
-          cards[i].style.display = "none";
-        }
+    // Search Trigger for Hero Bar
+    function triggerSearch() {
+      const q = document.getElementById('mainSearchInput').value.trim();
+      document.getElementById('generator').scrollIntoView({ behavior: 'smooth' });
+      if (q) {
+        document.getElementById('promptInput').value = q;
       }
     }
-  </script>
 
-</body>
-</html>
+    // AI Image Generator
+    const generateBtn = document.getElementById('generateBtn');
+    const inputField = document.getElementById('promptInput');
+    const resultContainer = document.getElementById('resultContainer');
+    const generatedImage = document.getElementById('generatedImage');
+    const loadingText = document.getElementById('loadingText');
+
+    let currentImageUrl = '';
+
+    generateBtn.addEventListener('click', () => {
+      let promptText = inputField.value.trim();
+      if (!promptText) {
+        promptText = "A stunning futuristic magical landscape digital art";
+        inputField.value = promptText;
+      }
+
+      resultContainer.classList.remove('hidden');
+      loadingText.classList.remove('hidden');
+      loadingText.innerText = 'AI image bana raha hai, thoda wait karein...';
+      generatedImage.style.opacity = '0.3';
+
+      currentImageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(promptText)}?model=flux&nologo=true`;
+      generatedImage.src = currentImageUrl;
+      
+      generatedImage.onload = () => {
+        loadingText.classList.add('hidden');
+        generatedImage.style.opacity = '1';
+      };
+      
+      generatedImage.onerror = () => {
+        loadingText.innerText = 'Image load hone mein problem aayi, dubara try karein.';
+      };
+    });
+
+    generatedImage.addEventListener('click', () => {
+      if (currentImageUrl) window.open(currentImageUrl, '_blank');
+    });
+
+    // Template Modal
+    const templateModal = document.getElementById('templateModal');
+    const modalTemplateTitle = document.getElementById('modalTemplateTitle');
+    const modalTemplateImg = document.getElementById('modalTemplateImg');
+
+    function openTemplatePreview(title, imgUrl) {
+      modalTemplateTitle.innerText = title;
+      modalTemplateImg.src = imgUrl;
+      templateModal.classList.remove('hidden');
+      templateModal.classList.add('flex');
+    }
+
+    function closeTemplateModal() {
+      templateModal.classList.add('hidden');
+      templateModal.classList.remove('flex');
+    }
+
+    // 45 AI Tools Data Array
+    const aiToolsList = [
+      { name: "ChatGPT", category: "Text & Chat", desc: "OpenAI's powerful conversational chatbot for writing, reasoning, and coding.", url: "https://chatgpt.com", icon: "🤖" },
+      { name: "Google Gemini", category: "Text & Chat", desc: "Google's advanced multimodal AI assistant integrated with workspace.", url: "https://gemini.google.com", icon: "✨" },
+      { name: "Perplexity AI", category: "Text & Chat", desc: "Conversational AI search engine with real-time web citations.", url: "https:
